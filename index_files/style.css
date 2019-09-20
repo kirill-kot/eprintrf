@@ -1,0 +1,17 @@
+@import "http://webfonts.ru/import/cleanvertising.css";
+h1,h2{font-family:'Cleanvertising'}
+body{margin-top:50px}body .wrap{padding-bottom:45px}
+body .wrap .header{padding:2em 0;border-bottom:1px solid #ccc}
+body .wrap .content-wrap{min-height:90vh}body .wrap .content-wrap .site-index{padding-bottom:50px}
+body .wrap .content-wrap .page{}
+body .wrap .advantages-wrap{background:#eee}
+body .footer{margin-bottom:45px}
+.header .phones .phone-code,.header .phones .label{font-size:1.3em}
+.header .phones .phone{font-size:2em}
+.header .menu-uslugi a{font-size:1.6em}
+body .wrap .home-cat h1{text-align:center}
+body .wrap .home-cat .row{margin-bottom:2em}
+body .wrap .home-cat .row .cat-item h2{text-align:center; height: 75px; margin-bottom: 5px;}
+body .wrap .home-cat .row .cat-item img{display:block;margin:0 auto;height:100px}
+/*изменена высотка картинок, для иконок хватит и 100 пикселей высоты*/
+#printler-calc-iframe{bottom:0 !important;top:auto !important}

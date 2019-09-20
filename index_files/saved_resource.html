@@ -1,0 +1,2446 @@
+<!DOCTYPE html>
+<!-- saved from url=(0084)http://printler.pro/cabinet/iframe2/?api_key=3d2YvZe5AstSJKTVfVYxzvJJ54tKo2Ff#/close -->
+<html lang="en" class="no-js"><!--<![endif]--><!-- BEGIN HEAD --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+
+<title>Printler</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="" name="description">
+<meta content="" name="author">
+
+
+<link href="./css" rel="stylesheet" type="text/css">
+<link href="./widget1.min.css" rel="stylesheet" type="text/css">
+<link href="./widget2.min.css" rel="stylesheet" type="text/css">
+<link href="./widget3.min.css" rel="stylesheet" type="text/css">
+<link href="./widget4.min.css" rel="stylesheet" type="text/css">
+<link href="./widget5.min.css" rel="stylesheet" type="text/css">
+
+
+
+<link rel="shortcut icon" href="http://printler.pro/static/img/favicon.ico">
+</head>
+<body class="printler-body " ng-controller="Widget2WindowsController" ng-app="Widget2Orders">
+  <div class="page-container">
+
+      <div class="widget-header">
+    <div class="widget-header-path">
+        <div ng-hide="config.widget2.isOpen">
+            <a class="btn pr-btn-circle btn-sm btn-primary" ui-sref="orders.product" ng-show="!config.widget2.isOpen &amp;&amp; !session.loggedIn &amp;&amp; config.orders.cart.products.length == 0" href="http://printler.pro/cabinet/iframe2/?api_key=3d2YvZe5AstSJKTVfVYxzvJJ54tKo2Ff#/orders/orders/product">
+                Заказать полиграфию
+            </a>
+            <a class="btn pr-btn-circle btn-sm btn-primary ng-hide" ui-sref="orders.summary" ng-show="!config.widget2.isOpen &amp;&amp; config.orders.cart.products.length &gt; 0" href="http://printler.pro/cabinet/iframe2/?api_key=3d2YvZe5AstSJKTVfVYxzvJJ54tKo2Ff#/orders/orders/summary">
+                Вернуться к заказу
+            </a>
+            <a class="btn pr-btn-circle btn-sm btn-primary ng-hide" ui-sref="orders.product" ng-show="!config.widget2.isOpen &amp;&amp; session.loggedIn &amp;&amp; config.orders.cart.products.length == 0" href="http://printler.pro/cabinet/iframe2/?api_key=3d2YvZe5AstSJKTVfVYxzvJJ54tKo2Ff#/orders/orders/product">
+                Новый заказ
+            </a>
+            <a class="header-link link-disabled ng-binding ng-hide" style="padding-left: 20px;" ui-sref="orders.summary" ng-show="!config.widget2.isOpen &amp;&amp; config.orders.cart.products.length &gt; 0" href="http://printler.pro/cabinet/iframe2/?api_key=3d2YvZe5AstSJKTVfVYxzvJJ54tKo2Ff#/orders/orders/summary">
+                Корзина 
+            </a>
+        </div>
+        <div ng-show="config.widget2.isOpen" class="string-path ng-hide">
+            <a class="header-link link-disabled" ng-class="{ &#39;link-disabled&#39;: !config.$state.includes(&#39;orders.product&#39;) }" ui-sref="orders.product" href="http://printler.pro/cabinet/iframe2/?api_key=3d2YvZe5AstSJKTVfVYxzvJJ54tKo2Ff#/orders/orders/product">Выбор изделия</a>
+            <div class="vertical-line">|</div>
+            <a class="header-link not-link link-disabled" href="http://printler.pro/cabinet/iframe2/?api_key=3d2YvZe5AstSJKTVfVYxzvJJ54tKo2Ff#" ng-class="{ &#39;link-disabled&#39;: !(config.$state.includes(&#39;orders.new&#39;) || config.$state.includes(&#39;orders.edit&#39;)) }">
+                Параметры изделия</a>
+            <div class="vertical-line">|</div>
+            <a class="header-link ng-binding link-disabled ng-hide" ui-sref="orders.summary" ng-show="config.orders.cart.products.length &gt; 0" ng-class="{ &#39;link-disabled&#39;: !config.$state.includes(&#39;orders.summary&#39;) }" href="http://printler.pro/cabinet/iframe2/?api_key=3d2YvZe5AstSJKTVfVYxzvJJ54tKo2Ff#/orders/orders/summary">
+                Корзина 
+            </a>
+            <a class="header-link not-link link-disabled" href="http://printler.pro/cabinet/iframe2/?api_key=3d2YvZe5AstSJKTVfVYxzvJJ54tKo2Ff#" ng-hide="config.orders.cart.products.length &gt; 0" ng-class="{ &#39;link-disabled&#39;: !config.$state.includes(&#39;orders.summary&#39;) }">
+                Корзина</a>
+            <div class="vertical-line">|</div>
+            <a class="header-link not-link link-disabled" href="http://printler.pro/cabinet/iframe2/?api_key=3d2YvZe5AstSJKTVfVYxzvJJ54tKo2Ff#" ng-show="!session.loggedIn || config.orders.cart.products.length == 0" ng-class="{ &#39;link-disabled&#39;: !config.$state.includes(&#39;orders.delivery&#39;) }">Сроки и доставка</a>
+            <a class="header-link link-disabled ng-hide" ui-sref="orders.delivery" ng-show="session.loggedIn &amp;&amp; config.orders.cart.products.length &gt; 0" ng-class="{ &#39;link-disabled&#39;: !config.$state.includes(&#39;orders.delivery&#39;) }" href="http://printler.pro/cabinet/iframe2/?api_key=3d2YvZe5AstSJKTVfVYxzvJJ54tKo2Ff#/orders/orders/delivery">Сроки и доставка</a>
+            <a class="header-link link-disabled not-link ng-hide" style="float:right" href="http://printler.pro/cabinet/iframe2/orders.summary" ng-show="config.orders.isNowCreate">
+                Ваш заказ принят. Отслеживайте его готовность в личном кабинете →
+            </a>
+        </div>
+    </div>
+    <div class="widget-header-login">
+        <a class="btn pr-btn-circle btn-sm btn-primary" ui-sref="login" ng-hide="session.loggedIn" href="http://printler.pro/cabinet/iframe2/?api_key=3d2YvZe5AstSJKTVfVYxzvJJ54tKo2Ff#/login">Войти</a>
+        <a class="header-link ng-binding ng-hide" ui-sref="profileMenu" ng-show="session.loggedIn" href="http://printler.pro/cabinet/iframe2/?api_key=3d2YvZe5AstSJKTVfVYxzvJJ54tKo2Ff#/profile/menu"></a>
+    </div>
+</div>
+
+      <div class="page-content-wrapper" ng-click="closeOnOutClick($event)">
+
+          <div ng-show="config.login.show" class="login-view ng-hide">
+              <!-- uiView: login --><div ui-view="login" class="ng-scope"></div>
+          </div>
+
+          <div class="frame" ng-hide="config.login.show">
+              <div class="iframe-close" ng-click="closeIframe()" aria-hidden="true">
+                  <i class="fa fa-circle"></i>
+                  <i class="fa fa-times-circle-o"></i>
+              </div>
+              <div class="frame-content">
+                  <!-- uiView:  --><div ui-view="" class="ng-scope"></div>
+              </div>
+          </div>
+
+      </div>
+  </div>
+
+
+<!--[if lt IE 9]>
+   <script src="assets/global/plugins/respond.min.js"></script>
+   <script src="assets/global/plugins/excanvas.min.js"></script>
+   <![endif]-->
+<script src="./widget2_libs.min.js" type="text/javascript"></script>
+<script src="./widget2App.min.js" type="text/javascript"></script>
+<!-- END JAVASCRIPTS -->
+<script type="text/ng-template" id="views/directives/rangeInput.html">
+    <table class="table range-field-table">
+    <input name="{[ rangeName ]}" type="hidden" ng-value="range.data() | json5"/>
+    <tbody>
+        <tr data-ng-repeat="rng in range.data()">
+            <td>
+                <span data-ng-bind-html=" $index == 0 ? helpText : '' "></span>
+                <i ng-if="tip" class="fa fa-question-circle popovers"
+                   data-trigger="hover"
+                   data-html="true"
+                   data-container="body"
+                   data-content="{[ tip ]}"></i>
+            </td>
+            <td>от</td>
+            <td>
+                <strong ng-bind="rng.begin == 0 ? 0 : ((rng.begin - 1) / factors.bounds + 1)"></strong>
+            </td>
+            <td>до</td>
+            <td ng-switch="isLast($index) && range.isRightFixed()">
+                <div ng-switch-when="true">
+                    <strong style="font-size: 20px;" ng-if="!isFinite(rng.end)">&infin;&nbsp;</strong>
+                    <strong ng-if="isFinite(rng.end)">{[ rng.end / factors.bounds ]}</strong>
+                    <span ng-bind-html="boundsMeasure"></span>
+                </div>
+                <div ng-switch-default>
+                    <input type="number" id="{[ rangeName ]}_r_{[ $index ]}"
+                           class="form-control input-inline input-small input-sm"
+                           factor-min="{[ rng.begin ]}" factor-max="{[ getMaxEnd($index) ]}"
+                           factor="{[ factors.bounds ]}"
+                           ng-model="rng.end" data-focus-when="lastFocused" data-ng-change="lastFocused = false;" required/>
+                </div>
+            </td>
+            <td>
+                <span ng-hide="isLast($index)" ng-bind-html="boundsMeasure"></span>
+            </td>
+            <td>&#8212;</td>
+            <td>
+                <input type="number" id="{[ rangeName ]}_v_{[ $index ]}"
+                       class="form-control input-inline input-small input-sm"
+                       ng-model="rng.value" factor="{[ factors.value ]}"
+                       data-ng-required="valuesRequired" min=0 step="0.0001"/>
+            </td>
+            <td data-ng-bind-html="measure"></td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <a data-ng-show="range.isValid()" href="" data-ng-click="addRange()">
+        <i class="fa fa-plus"></i>
+        Добавить диапазон
+    </a>
+    &nbsp;&nbsp;&nbsp;
+    <a data-ng-show="range.size() > 1" href="" data-ng-click="range.popBack()">
+        <i style="color: red;" class="fa fa-minus"></i>
+        Убрать диапазон
+    </a>
+</div>
+
+</script>
+<script type="text/ng-template" id="views/directives/multiRangeInput.html">
+    <input name="{[ rangeName ]}" type="hidden" ng-value="range.data() | json5" />
+<div ng-repeat="rangeItem in range.data()" style="position: relative;">
+    <h3 ng-bind-html="helpText + ' ' + rangeItem.begin + '&nbsp;&mdash;&nbsp;' + rangeItem.end + ' ' + measure"></h3>
+    <div ng-transclude></div>
+</div>
+
+<div id="modal_{[ rangeName]}" class="modal fade bs-modal-lg" aria-hidden="true" tabindex="-1" role="dialog" ng-controller="MultiRangeModalController" ng-init="init()">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h3>Диапазоны значений</h3>
+            </div>
+            <div class="modal-body">
+                <div ng-repeat="rangeItem in range.data()" class="printler-ion-range">
+                    <ion-range-slider name="{[ rangeName ]}_slider_{[ $index ]}" min="rangeItem.begin" max="rangeItem.end" value="slist[$index]" settings="{}"></ion-range-slider>
+                    <center ng-if="$index != range.data().length - 1">
+                                <a href="#" class="btn green tooltips btn-ion-range-merge" ng-click="mergeRanges($index)" data-container="body" data-placement="right" data-html="true" data-original-title="Объединить со следующим">Объединить <i class="fa fa-plus"></i></a>
+                            </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</script>
+<script type="text/ng-template" id="views/directives/ionRangeSlider.html">
+    <input name="{[ sliderName ]}" type="text"/>
+<a href="#" class="btn btn-info tooltips btn-ion-range-separate" ng-click="separateRange($index)" data-container="body" data-placement="right" data-html="true" data-original-title="Разбить диапазон">Разбить<i class="fa fa-scissors"></i></a>
+</script>
+<script type="text/ng-template" id="views/directives/arrayInput.html">
+    <div class="clearfix">
+    <div data-ng-repeat="item in array track by $index" class="form-group array-field">
+        <label>{[ $index + 1 ]} {[ argumentLabel ]}</label>
+        <div class="input-group input-small" data-ng-if="measure">
+            <input type="text" name="{[ arrayName ]}_{[ $index ]}" data-ng-model="item" class="form-control" required/>
+            <span class="input-group-addon">{[ measure ]}</span>
+        </div>
+        <input type="text" data-ng-if="!measure" name="{[ arrayName ]}_{[ $index ]}" data-ng-model="item" class="form-control input-small"/>
+    </div>
+</div>
+
+</script>
+<script type="text/ng-template" id="views/directives/objectList.html">
+    <table class="table input-table">
+    <thead>
+        <tr>
+            <th data-ng-repeat="fname in fieldsOrder" data-ng-if="fields[fname].type != 'hidden'">
+                {[ fields[fname].type == 'annotation' ? '' : fields[fname].name | i18n ]}
+                <i class="fa fa-question-circle popovers"
+                   ng-if="hints && hints[$index]"
+                   data-trigger="hover" data-container="body"
+                   data-content="{[ hints[$index] ]}">
+                </i>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-repeat="item in list" data-ng-with="$index as itemNumber">
+            <td data-ng-repeat="fname in fieldsOrder"
+                data-ng-with="fields[fname] as f"
+                data-ng-if="fields[fname].type != 'hidden'"
+                data-ng-switch="f.type">
+                <span data-ng-switch-when="annotation">{[ f.name ]}</span>
+                <input data-ng-switch-default type="{[f.type]}" name="{[ listName ]}_{[ fname ]}_{[ itemNumber ]}"
+                       min="{[ factors[$index] ? f.min * factors[$index] : f.min ]}"
+                       step="{[f.step]}" ng-model="item[fname]" factor="{[ factors[$index] ]}"
+                       data-ng-required="f.required" class="form-control" data-ng-if="!f.typeahead"/>
+                <input data-ng-switch-default type="{[f.type]}" ng-model="item[fname]" factor="{[ factors[$index] ]}"
+                       name="{[ listName ]}_{[ fname ]}_{[ itemNumber ]}"
+                       data-typeahead="addr for addr in getLocation(item[fname])"
+                       data-typeahead-loading="addressesLoading"
+                       data-ng-required="f.required" class="form-control" data-ng-if="f.typeahead"/>
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger"
+                        data-ng-click="removeItem($index)" data-ng-if="!min || list.length > min">&times;</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p data-ng-if="!max || list.length < max">
+    <a href="" data-ng-click="addItem()">
+        <i class="fa fa-plus"></i>
+        Добавить {[ itemTitle ]}
+    </a>
+</p>
+
+</script>
+<script type="text/ng-template" id="views/directives/pantoneList.html">
+    <div class="pantone-input" data-ng-repeat="num in [1]">
+    <input type="hidden" data-ui-select2="pantoneSelectSettings"
+            data-ng-model="$parent.colors"
+            class="form-control input-medium"
+            name="screen_colors_array_{[side]}_{[sec]}" />
+</div>
+</script>
+<script type="text/ng-template" id="views/directives/plusMinusInput.html">
+    <div class="input-group bootstrap-touchspin">
+    <span class="input-group-btn">
+        <button class="btn btn-primary bootstrap-touchspin-down" type="button" ng-disabled="isDecDisabled()" ng-click="decModel()">-</button>
+    </span>
+    <input dynamic-name="inputName" type="number" min="{[min]}" step="{[step]}" class="form-control" ng-model="model" divides-by="divider"/>
+    <span class="input-group-btn">
+        <button class="btn btn-primary bootstrap-touchspin-up" ng-click="incModel()" type="button">+</button>
+    </span>
+    <span ng-if="measure" class="input-group-addon addon-transparent">{[ measure ]}</span>
+</div>
+</script>
+<script type="text/ng-template" id="views/directives/resolutionInput.html">
+    <input name="{[ resolutionName ]}" type="hidden" value="{[ toOuterView(resolutions) | json5 ]}"/>
+<div class="portlet">
+    <div class="portlet-title">
+        <div class="caption">Настройки разрешений</div>
+    </div>
+    <div class="portlet-body">
+        <object-list item-title="разрешение" min="1" list="resolutions"
+                     list-name="resolutions"
+                     fields="fieldsTable"
+                     fields-order="fieldsOrder"
+                     hints="hints"
+                     factors="factors">
+        </object-list>
+    </div>
+</div>
+<div class="portlet" ng-show="resolutions.length > 0">
+    <div class="portlet-title">
+        <div class="caption">Стоимости</div>
+    </div>
+    <div class="portlet-body form form-horizontal">
+        <div ng-repeat="res in resolutions" ng-if="res.resolution">
+            <h4>{[ res.resolution ]} dpi</h4>
+            <div data-range-input
+                 data-range-model="res.costs"
+                 data-range-name="costs_{[ $index ]}"
+                 data-help-text="Количество м<sup>2</sup> за тираж"
+                 data-measure="рублей за м<sup>2</sup>"
+                 data-bounds-measure=""
+                 data-right-upper-bound="Infinity"
+                 data-values-required="true"
+                 data-factors="{bounds: 100000, value: 0.000001}">
+            </div>
+        </div>
+        <br/>
+    </div>
+</div>
+
+</script>
+<script type="text/ng-template" id="views/directives/techMap.html">
+    <table cellpadding=0 cellspacing=0 class="tech-map-table columns-{[columns]}">
+    <tr ng-repeat="row in table track by $index" ng-class="{'even':$even, 'odd':$odd}">
+        <td ng-repeat="cell in row track by $index">
+            <div ng-if="cell.node_name" class="table-head bold uppercase">
+                {[ cell.node_name | i18n:'calc_response' ]}
+            </div>
+            <div ng-if="cell.machine" class="data">
+                <p class="operation-name bold">{[ cell.operation_name | i18n:'calc_response' ]}</p>
+                <p ng-bind="cell.machine" class="machine-name"></p>
+            </div>
+            <div ng-if="!cell.machine" class="lines"
+                 ng-class="{
+                    'dot-top':cell.dots.top,
+                    'dot-bottom':cell.dots.bottom,
+                    'dot-left':cell.dots.left,
+                    'dot-right':cell.dots.right
+                 }">
+                <div class="l-t"></div><div class="r-t"></div>
+                <div class="l-b"></div><div class="r-b"></div>
+            </div>
+        </td>
+    </tr>
+</table>
+</script>
+<script type="text/ng-template" id="views/helpers/yesno.html">
+    <div class="modal-header">
+    <button type="button" class="close" ng-click="no()" aria-hidden="true"></button>
+    <h4 class="modal-title">Подтверждение действия</h4>
+</div>
+<div class="modal-body">
+    <p ng-bind="message"></p>
+    <button class="btn btn-primary" ng-click="no()" ng-if="nobtn" ng-bind="nobtntext"></button>
+    <button class="btn btn-danger" ng-click="yes()" ng-if="yesbtn" ng-bind="yesbtntext"></button>
+</div>
+<div class="clearfix"></div><br/>
+</script>
+<!-- LOGIN -->
+<script type="text/ng-template" id="views/widget2/login/new.html">
+    <div class="page-content">
+    <center>
+        <h1>Авторизация</h1>
+        <p>После авторизации вам станут доступны персональные скидки, статусы производства и история ваших заказов</p>
+    </center>
+    <div class="col-sm-12 row is-user-choise">
+        <div class="form-group" ng-init="clientInfo.is_new_user = true">
+            <div class="radio-list">
+                <label class="col-sm-6 right">
+                    <input type="radio" name="clientInfo.is_new_user" ng-value="true"
+                           ng-change="clientInfo.is_new_user = true"
+                           apply-uniform ng-model="clientInfo.is_new_user"> Я — новый пользователь
+                </label>
+                <label class="col-sm-6">
+                    <input type="radio" name="clientInfo.is_new_user" ng-value="false"
+                           ng-change="clientInfo.is_new_user = false"
+                           apply-uniform ng-model="clientInfo.is_new_user"> Я уже регистрировался
+                </label>
+            </div>
+        </div>
+    </div>
+    <form class="col-sm-12 row is-new-user-form form-horizontal" ng-show="clientInfo.is_new_user" id="RegisterForm" ng-submit="login()">
+        <div class="col-sm-6 right-inputs">
+            <div class="form-group">
+                <input class="form-control input-medium" name="client_name" ng-model="clientInfo.general.name" type="text" placeholder="ФИО или название" required/>
+            </div>
+            <div class="form-group" ng-class="{'has-error': !!session.errors['phone']}">
+                <input class="form-control input-medium" name="client_email" ng-model="clientInfo.general.phone" type="text" input-mask="inputmask.phone" placeholder="Телефон" required/>
+                <div ng-if="!!session.errors['phone']">
+                    <span class="help-block" ng-repeat="e in session.errors['phone'] track by $index">{[ e ]}</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group" ng-class="{'has-error': !!session.errors['email']}">
+                <input class="form-control input-medium" name="client_email" ng-model="clientInfo.general.email" type="email" placeholder="e-mail" required/>
+                <div ng-if="!!session.errors['email']">
+                    <span class="help-block" ng-repeat="e in session.errors['email'] track by $index">{[ e ]}</span>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': !!session.errors['password']}">
+                <div class="input-icon right input-medium">
+                    <i class="fa fa-eye password-eye"
+                       ng-class="{ 'red': clientInfo.passwordShow }"
+                       ng-click="clientInfo.passwordShow = !clientInfo.passwordShow"></i>
+                    <input class="form-control no-animate" placeholder="Пароль" type="password" required
+                           ng-model="clientInfo.general.password"
+                           ng-hide="clientInfo.passwordShow">
+                    <input class="form-control no-animate" placeholder="Пароль" type="text" required
+                           ng-model="clientInfo.general.password"
+                           ng-show="clientInfo.passwordShow">
+                </div>
+                <div ng-if="!!session.errors['password']">
+                    <span class="help-block" ng-repeat="e in session.errors['password'] track by $index">{[ e ]}</span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="col-sm-12" ng-hide="clientInfo.is_new_user">
+        <form class="form-horizontal" id="LoginForm" ng-submit="login()">
+            <div class="form-group">
+                <div class="input-icon center-input-medium">
+                    <i class="fa fa-envelope"></i>
+                    <input class="form-control input-medium" id="login_email" ng-model="clientInfo.general.email" placeholder="Email" type="email" name="email">
+                </div>
+            </div>
+            <div class="form-group">
+                <input class="form-control input-medium center-input-medium" id="login_password" ng-model="clientInfo.general.password" placeholder="Пароль" type="password" name="password">
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-12 form-group" style="text-align:center;">
+        <button class="btn pr-btn-circle btn-primary input-inlne"
+                ng-class="{'button-loading': session.isLoggingIn}"
+                type="submit" form="{[ clientInfo.is_new_user ? 'RegisterForm' : 'LoginForm' ]}"
+                ng-bind="clientInfo.is_new_user ? 'Регистрация' : 'Войти'"></button>
+    </div>
+</div>
+</script>
+<script type="text/ng-template" id="views/widget2/login/profile.html">
+    <div class="page-content client-form" ng-controller="ClientController">
+    <div class="row">
+    <div class="col-sm-12">
+        <div class="portlet">
+        <div class="portlet-body form-horizontal profile-settings">
+            <h1>Нaстройки профиля</h1>
+            <accordion>
+                <accordion-group heading="Общая информация"
+                    ng-class="{ 'panel-danger': client.hasErrors() }" is-open="true">
+                    <h3>Общие сведения</h3>
+
+<div class="form-body">
+
+    <div class="form-group">
+        <div class="col-sm-3 right">
+            <label class="control-label">Название</label>
+        </div>
+        <div class="col-sm-9">
+            <label class="control-label"
+                   editable-text="session.user.name"
+                   buttons="no" blur="submit"
+                   >{[ session.user.name || "..." ]}</label>
+        </div>
+    </div>
+
+    <div class="form-group"
+         ng-class="{'has-error': session.errors['email'] || session.errors['non_field_errors']}">
+        <div class="col-sm-3 right">
+            <label class="control-label">Email</label>
+        </div>
+        <div class="col-sm-9">
+            <label class="control-label" e-name="email"
+                   editable-text="session.user.email"
+                   buttons="no" blur="submit"
+                   >{[ session.user.email || "..." ]}</label>
+        </div>
+        <div class="col-sm-offset-3 col-sm-9">
+            <span class="help-block" ng-repeat="e in session.errors['email']">{[ e ]}</span>
+        <span class="help-block" ng-repeat="e in session.errors['non_field_errors']">{[ e ]}</span>
+        </div>
+    </div>
+
+    <a href="#" class="btn pr-btn-circle btn-primary" ng-click="save()">Сохранить</a>
+
+</div>
+                </accordion-group>
+                <accordion-group heading="{[ 'Контакты (' + client.contacts.length + ')' ]}"
+                    ng-class="{ 'panel-danger': client.hasErrors('contacts') }"
+                    is-disabled="!client.id">
+                    <accordion>
+    <accordion-group ng-repeat="contact in client.contacts" is-open="contact.is_open"
+                     ng-class="{ 'panel-danger': !!contact.errors }">
+        <accordion-heading>
+            <b>{[ contact.name || contact.email || contact.phone || contact.skype || 'Контакт' ]}</b>
+            <i class="fa fa-star default-contact"
+               ng-class="{'default': contact.is_default}"
+               ng-click="contact.set_default(client); $event.stopPropagation();"></i>
+            <i class="fa fa-trash-o delete-contact"
+               ng-click="delete_contact(client, contact); $event.stopPropagation();"></i>
+        </accordion-heading>
+        <form class="form-horizontal"
+              editable-form
+              name="editableContactForm"
+              blur="submit"
+              buttons="no"
+              onaftersave="contact.customSave()"
+            >
+            <div class="form-body">
+
+                <div class="form-group">
+                    <div class="col-sm-2 right">
+                        <label class="control-label">Имя</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <label class="editable control-label" e-name="name"
+                               editable-text="contact.name"
+                               ng-click="activate($event, editableContactForm)"
+                               >{[ contact.name || "..." ]}</label>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                    ng-class="{'has-error': !!contact.errors['helded_post']}"
+                    >
+                    <div class="col-sm-2 right">
+                        <label class="control-label">Должность</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <label class="editable control-label" e-name="helded_post"
+                               editable-text="contact.helded_post"
+                               ng-click="activate($event, editableContactForm)"
+                               >{[ contact.helded_post || "..." ]}</label>
+                    </div>
+                    <div class="col-sm-offset-2 col-sm-10"
+                        ng-if="!!contact.errors['helded_post']"
+                        >
+                        <span class="help-block" ng-repeat="e in contact.errors['helded_post']">{[ e ]}</span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                    ng-class="{'has-error': !!contact.errors['email']}"
+                    >
+                    <div class="col-sm-2 right">
+                        <label class="control-label">Email</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <label class="editable control-label" e-name="email"
+                               editable-text="contact.email"
+                               ng-click="activate($event, editableContactForm)"
+                           >{[ contact.email || "..." ]}</label>
+                    </div>
+                    <div class="col-sm-offset-2 col-sm-10"
+                        ng-if="!!contact.errors['email']"
+                        >
+                        <span class="help-block" ng-repeat="e in contact.errors['email']">{[ e ]}</span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                    ng-class="{'has-error': !!contact.errors['phone']}"
+                    >
+                    <div class="col-sm-2 right">
+                        <label class="control-label">Телефон</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <label class="editable control-label" e-name="phone"
+                               editable-text="contact.phone"
+                               ng-click="activate($event, editableContactForm)"
+                               e-placeholder="+7">{[ contact.phone || "..." ]}</label>
+                    </div>
+                    <div class="col-sm-offset-2 col-sm-10"
+                        ng-if="!!contact.errors['phone']"
+                        >
+                        <span class="help-block" ng-repeat="e in contact.errors['phone']">{[ e ]}</span>
+                    </div>
+                </div>
+
+                <!-- <div class="form-group"
+                     ng-repeat="extra_contact in contact.extra_contact_methods"
+                     ng-class="{'has-error': !!extra_contact.errors['non_field_errors']}">
+                    <div class="col-sm-2 right">
+                        <label blur="submit" buttons="no" editable-select="extra_contact.method"
+                               e-ng-options="value as name for (value, name) in extraMethods"
+                               class="editable control-label simple">
+                            {[ (extra_contact.method | i18n:'clients') || "не выбрано" ]}
+                        </label>
+                    </div>
+                    <div class="col-sm-8">
+                        <label class="editable control-label"
+                               ng-if="extra_contact.method == 'phone'"
+                               blur="submit" buttons="no" editable-text="extra_contact.contact_data">
+                            {[ extra_contact.contact_data ? inputmask.format(extra_contact.contact_data, inputmask.phone) : "..." ]}
+                        </label>
+                        <label class="editable control-label"
+                               ng-if="extra_contact.method != 'phone'"
+                               blur="submit" buttons="no" editable-text="extra_contact.contact_data">
+                            {[ extra_contact.contact_data || "..." ]}
+                        </label>
+                    </div>
+                    <div class="col-sm-2 right">
+                        <label class="control-label">Skype</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <label class="editable control-label" e-name="skype"
+                               editable-text="contact.skype"
+                               ng-click="activate($event, editableContactForm)"
+                               >{[ contact.skype || "..." ]}</label>
+                    </div>
+                </div> -->
+
+                <div class="form-group">
+                    <div class="col-sm-2 right">
+                        <label class="control-label">Другое</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <label class="editable control-label" e-name="other"
+                               editable-text="contact.other"
+                               ng-click="activate($event, editableContactForm)"
+                               >{[ contact.other || "..." ]}</label>
+                    </div>
+                </div>
+
+                <div class="form-group has-error" ng-if="!!contact.errors['non_field_errors']">
+                    <div class="col-sm-12">
+                        <span class="help-block" ng-repeat="e in contact.errors['non_field_errors']">{[e]}</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-2 right">
+                        <label class="control-label">Комментарий</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <label class="editable control-label" e-name="description"
+                               editable-textarea="contact.description"
+                               ng-click="activate($event, editableContactForm)"
+                               >{[ contact.description || "..." ]}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions row" ng-show="editableContactForm.$visible">
+                <div class="col-sm-2">
+                    <button type="submit"
+                        class="btn btn-primary right"
+                        ng-disabled="editableContactForm.$waiting"
+                        >Сохранить</button>
+                </div>
+                <div class="col-sm-10">
+                    <button type="button"
+                        class="btn btn-default"
+                        ng-disabled="editableContactForm.$waiting"
+                        ng-click="editableContactForm.$cancel()"
+                        >Отменить</button>
+                </div>
+            </div>
+        </form>
+    </accordion-group>
+</accordion>
+<div class="adding">
+    <a href="#" ng-click="add_contact(client)">+ Добавить контакт</a>
+</div>
+
+                </accordion-group>
+                <accordion-group heading="{[ 'Реквизиты (' + client.details.length + ')' ]}"
+                    ng-class="{ 'panel-danger': client.hasErrors('details') }"
+                    is-disabled="!client.id">
+                    <accordion>
+    <accordion-group ng-repeat="detail in client.details" is-open="detail.is_open"
+                     ng-class="{ 'panel-danger': has_errors(detail) }">
+        <accordion-heading>
+            <b>{[ detail.organization_name || 'Информация об организации' ]}</b>
+            <i class="fa fa-star default-contact"
+               ng-class="{'default': detail.is_default}"
+               ng-click="detail.set_default(client); $event.stopPropagation();"></i>
+            <i class="fa fa-trash-o delete-contact"
+               ng-click="delete_detail(client, detail); $event.stopPropagation();"></i>
+        </accordion-heading>
+        <form class="form-horizontal"
+              editable-form
+              name="editableDetailForm"
+              blur="submit"
+              buttons="no"
+              onaftersave="detail.customSave()"
+            >
+            <div class="form-body">
+
+                <div class="form-group"
+                    ng-class="{'has-error': !!detail.errors['organization_name']}"
+                    >
+                    <div class="col-sm-1">
+                        <label class="control-label left">Тип</label>
+                    </div>
+                    <div class="col-sm-2">
+                        <label class="editable control-label"
+                               e-name="organization_type"
+                               ng-click="activate($event, editableDetailForm)"
+                               editable-select="detail.organization_type"
+                               e-ng-options="organization_type for organization_type in organization_types"
+                               >{[ detail.organization_type || "..." ]}
+                        </label>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <label class="control-label left">Название</label>
+                    </div>
+                    <div class="col-sm-7">
+                        <label class="col-sm-7 editable control-label"
+                               e-name="organization_name"
+                               ng-click="activate($event, editableDetailForm)"
+                               editable-text="detail.organization_name"
+                               >{[ detail.organization_name || "..." ]}</label>
+                    </div>
+
+                    <div class="col-sm-offset-2 col-sm-10" ng-if="!!detail.errors['organization_name']">
+                        <span class="help-block" ng-repeat="e in detail.errors['organization_name']">{[ e ]}</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-1" ng-class="{'has-error': !!detail.errors['inn']}">
+                        <label class="control-label left">ИНН*</label>
+                    </div>
+                    <div class="col-sm-2"
+                         ng-class="{'has-error': !!detail.errors['inn']}">
+                        <label class="editable control-label"
+                               e-name="inn"
+                               ng-click="activate($event, editableDetailForm)"
+                               editable-text="detail.inn"
+                               e-errors="detail.errors['inn']"
+                               >{[ detail.inn || "..." ]}</label>
+                    </div>
+
+                    <div class="col-sm-1" ng-class="{'has-error': !!detail.errors['kpp']}">
+                        <label class="control-label left">КПП*</label>
+                    </div>
+                    <div class="col-sm-4" ng-class="{'has-error': !!detail.errors['kpp']}">
+                        <label class="editable control-label"
+                               e-name="kpp"
+                               ng-click="activate($event, editableDetailForm)"
+                               editable-text="detail.kpp"
+                               >{[ detail.kpp || "..." ]}</label>
+                    </div>
+
+                    <div class="col-sm-offset-2 col-sm-10 has-error" ng-if="!!detail.errors['inn'] || !!detail.errors['kpp']">
+                        <span class="help-block"
+                            ng-repeat="e in union(detail.errors['inn'], detail.errors['kpp'])"
+                            >{[ e ]}</span>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error': !!detail.errors['bank']}">
+                    <div class="col-sm-1">
+                        <label class="control-label left">Банк*</label>
+                    </div>
+                    <div class="col-sm-11">
+                        <label class="editable control-label"
+                               e-name="bank"
+                               ng-click="activate($event, editableDetailForm)"
+                               editable-text="detail.bank"
+                               >{[ detail.bank || "..." ]}</label>
+                    </div>
+
+                    <div class="col-sm-offset-2 col-sm-10" ng-if="!!detail.errors['bank']">
+                        <span class="help-block" ng-repeat="e in detail.errors['bank']">{[ e ]}</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-1" ng-class="{'has-error': !!detail.errors['bic']}">
+                        <label class="control-label left">БИК*</label>
+                    </div>
+                    <div class="col-sm-2" ng-class="{'has-error': !!detail.errors['bic']}">
+                        <label class="editable control-label"
+                               e-name="bic"
+                               ng-click="activate($event, editableDetailForm)"
+                               editable-text="detail.bic"
+                               >{[ detail.bic || "..." ]}</label>
+                    </div>
+
+                    <div class="col-sm-1" ng-class="{'has-error': !!detail.errors['rs']}">
+                        <label class="control-label left">р/с*</label>
+                    </div>
+                    <div class="col-sm-4" ng-class="{'has-error': !!detail.errors['rs']}">
+                        <label class="editable control-label"
+                               e-name="rs"
+                               ng-click="activate($event, editableDetailForm)"
+                               editable-text="detail.rs">{[ detail.rs || "..." ]}</label>
+                    </div>
+
+                    <div class="col-sm-1" ng-class="{'has-error': !!detail.errors['ks']}">
+                        <label class="control-label left">к/с*</label>
+                    </div>
+                    <div class="col-sm-3" ng-class="{'has-error': !!detail.errors['ks']}">
+                        <label class="editable control-label"
+                               e-name="ks"
+                               ng-click="activate($event, editableDetailForm)"
+                               editable-text="detail.ks"
+                               >{[ detail.ks || "..." ]}</label>
+                    </div>
+
+                    <div class="col-sm-offset-2 col-sm-10 has-errors"
+                         ng-if="!!detail.errors['bic'] || !!detail.errors['rs'] || !!detail.errors['ks']"
+                         ng-class="{'has-error': (!!detail.errors['bic'] || !!detail.errors['rs'] || !!detail.errors['ks'])}">
+                        <span class="help-block"
+                              ng-repeat="e in union(detail.errors['bic'], detail.errors['rs'], detail.errors['ks'])">{[ e ]}</span>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error': !!detail.errors['actual_address']}">
+                    <div class="col-sm-2">
+                        <label class="control-label left">Адрес</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <label class="editable control-label"
+                               e-name="actual_address"
+                               ng-click="activate($event, editableDetailForm)"
+                               editable-text="detail.actual_address"
+                               >{[ detail.actual_address || "..." ]}</label>
+                    </div>
+
+                    <div class="col-sm-offset-2 col-sm-10" ng-if="!!detail.errors['actual_address']">
+                        <span class="help-block" ng-repeat="e in detail.errors['actual_address']">{[ e ]}</span>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error': !!detail.errors['juridical_address']}">
+                    <div class="col-sm-2">
+                        <label class="control-label left">Юр. адрес*</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <label class="editable control-label"
+                               e-name="juridical_address"
+                               ng-click="activate($event, editableDetailForm)"
+                               editable-text="detail.juridical_address"
+                               >{[ detail.juridical_address || "..." ]}</label>
+                    </div>
+
+                    <div class="col-sm-offset-2 col-sm-10" ng-if="!!detail.errors['juridical_address']">
+                        <span class="help-block" ng-repeat="e in detail.errors['juridical_address']">{[ e ]}</span>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error': !!detail.errors['post_address']}">
+                    <div class="col-sm-2">
+                        <label class="control-label left">Почтовый адрес</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <label class="editable control-label"
+                               e-name="post_address"
+                               ng-click="activate($event, editableDetailForm)"
+                               editable-text="detail.post_address"
+                               >{[ detail.post_address || "..." ]}</label>
+                    </div>
+
+                    <div class="col-sm-offset-2 col-sm-10" ng-if="!!detail.errors['post_address']">
+                        <span class="help-block" ng-repeat="e in detail.errors['post_address']">{[ e ]}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions row" ng-show="editableDetailForm.$visible">
+                <div class="col-sm-2">
+                    <button type="submit"
+                        class="btn btn-primary right"
+                        ng-disabled="editableDetailForm.$waiting"
+                        >Сохранить</button>
+                </div>
+                <div class="col-sm-10">
+                    <button type="button"
+                        class="btn btn-default"
+                        ng-disabled="editableDetailForm.$waiting"
+                        ng-click="editableDetailForm.$cancel()"
+                        >Отменить</button>
+                </div>
+            </div>
+        </form>
+    </accordion-group>
+</accordion>
+<div class="adding">
+    <a href="#" ng-click="add_detail(client)">+ Добавить реквизиты</a>
+</div>
+
+                </accordion-group>
+                <accordion-group heading="{[ 'Адресa доставки (' + client.delivery_addresses.length + ')' ]}"
+                    ng-class="{ 'panel-danger': client.hasErrors('delivery_addresses') }"
+                    is-disabled="!client.id">
+                    <div ng-repeat="delivery_address in client.delivery_addresses">
+    <form class="form-horizontal"
+          editable-form
+          name="editableDeliveryAddressForm"
+          blur="submit"
+          buttons="no"
+          onaftersave="delivery_address.customSave()"
+        >
+        <div class="form-body">
+            <div class="col-sm-2 right">
+                <label class="control-label">Адрес доставки</label>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-6">
+                    <label class="control-label editable" 
+                           e-name="address"
+                           ng-click="activate($event, editableDeliveryAddressForm)"
+                           editable-text="delivery_address.address"
+                           >{[ delivery_address.address || "..." ]}</label>
+                </div>
+                <div class="col-sm-3">
+                    <i class="fa fa-trash-o delete-contact"
+                       ng-click="delete_delivery_address(client, delivery_address); $event.stopPropagation();"></i>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div style="text-align: center; font-weight: 700;">
+    <a href="#" ng-click="add_delivery_address(client)">+ Добавить адрес</a>
+</div>
+
+                </accordion-group>
+                <accordion-group heading="Пароль">
+                    <h3>Смена пароля</h3>
+<form name="passChangeForm" ng-init="passChangeForm.$setPristine()" novalidate>
+    <div class="form-group" ng-class="{'has-error': passChangeForm.new_pass.$invalid && !passChangeForm.new_pass.$pristine}">
+        <div class="control-label col-sm-5">Новый пароль</div>
+        <div class="col-sm-7">
+            <input class="form-control" name="new_pass" type="password" ng-model="passChange.newPassword" required/>
+            <div class="help-block"
+                 ng-show="passChangeForm.new_pass.$dirty && passChangeForm.new_pass.$error.required">
+                {[ 'required' | i18n:'validation' ]}
+            </div>
+       </div>
+    </div>
+    <div class="form-group" ng-class="{'has-error': passChangeForm.new_pass_repeat.$invalid && !passChangeForm.new_pass_repeat.$pristine}">
+        <div class="control-label col-sm-5">Повторите пароль</div>
+        <div class="col-sm-7">
+            <input class="form-control" name="new_pass_repeat" type="password" ng-model="passChange.newPasswordRepeat"
+                   same-as="passChange.newPassword" required/>
+            <div class="help-block"
+                 ng-show="passChangeForm.new_pass_repeat.$dirty && passChangeForm.new_pass_repeat.$error.required">
+                {[ 'required' | i18n:'validation' ]}
+            </div>
+            <div class="help-block"
+                 ng-show="passChangeForm.new_pass_repeat.$dirty && passChangeForm.new_pass_repeat.$error.sameAs">
+                {[ 'passes_not_match' | i18n:'validation' ]}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-7 col-sm-offset-5">
+            <a href="#" class="btn pr-btn-circle btn-primary"
+               ng-disabled="passChangeForm.$invalid"
+               ng-click="session_set_password(passChange.newPassword, passChange.newPasswordRepeat)">Сменить пароль</a>
+        </div>
+    </div>
+</form>
+                </accordion-group>
+            </accordion>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+</script>
+<script type="text/ng-template" id="views/widget2/login/menu.html">
+    <div class="row">
+    <div class="col-sm-12">
+        <ul class="widet-login-menu">
+            <li><a ui-sref="profileOrders">Мои заказы</a></li>
+            <li><a ui-sref="profile">Профиль</a></li>
+            <li><a ui-sref="loginDestroy">Выйти</a></li>
+        </ul>
+    </div>
+</div>
+</script>
+<script type="text/ng-template" id="views/widget2/login/orders.html">
+    <div class="page-content">
+<div class="row">
+<div class="col-sm-12">
+<div class="portlet">
+<div class="portlet-body widget-orders">
+    <h1>Заказы</h1>
+    <div ng-show="config.orders.cart.products.length > 0">
+        <div class="numbered no-border">
+            <div class="number">Текущий</div>
+            <div class="row">
+                <div class="col-sm-7 col-sm-offset-1 name">
+                    <span ng-repeat="product in config.orders.cart.products">
+                        {[ $index == 0? "" : "&nbsp;&middot;&nbsp;"]}
+                        <span>{[ product.calc_data.tech_card.product ]}</span>
+                    </span>
+                </div>
+                <div class="col-sm-2 price">{[ config.orders.cart.totalCost(config.widget2.apiSettings) | number:0 ]} р.</div>
+                <div class="col-sm-2 date">
+                    <a href="" ui-sref="orders.summary" class="btn pr-btn-circle btn-primary btn-arrow-right">К заказу</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-with="filterNotReady(client.multi_orders) as pendingOrders"
+         ng-show="pendingOrders.length > 0">
+        <h3>Отправленные</h3>
+        <div class="numbered">
+    <div class="number">№</div>
+    <div class="row" ng-repeat="order in pendingOrders">
+        <div class="col-sm-1 id">
+            <a href="" ui-sref="profileOrder({id:order.id})" ng-bind="order.string_id"></a>
+        </div>
+        <div class="col-sm-7 name">
+            <span ng-repeat="product in order.orders">
+                {[ $index == 0? "" : "&nbsp;&middot;&nbsp;"]}
+                <span>{[ product.calc_data.tech_card.product ]}</span>
+            </span>
+        </div>
+        <div class="col-sm-2 price">{[ order.total_cost | number:0 ]} р.</div>
+        <div class="col-sm-2 date">{[ order.date_ready | date:"dd.MM.yyyy" ]}</div>
+    </div>
+</div>
+    </div>
+    <div ng-with="filterReady(client.multi_orders) as readyOrders"
+         ng-show="readyOrders.length > 0">
+        <h3>Готовые</h3>
+        <div class="numbered">
+    <div class="number">№</div>
+    <div class="row" ng-repeat="order in readyOrders">
+        <div class="col-sm-1 id">
+            <a href="" ui-sref="profileOrder({id:order.id})" ng-bind="order.string_id"></a>
+        </div>
+        <div class="col-sm-7 name">
+            <span ng-repeat="product in order.orders">
+                {[ $index == 0? "" : "&nbsp;&middot;&nbsp;"]}
+                <span>{[ product.calc_data.tech_card.product ]}</span>
+            </span>
+        </div>
+        <div class="col-sm-2 price">{[ order.total_cost | number:0 ]} р.</div>
+        <div class="col-sm-2 date">{[ order.date_ready | date:"dd.MM.yyyy" ]}</div>
+    </div>
+</div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</script>
+<script type="text/ng-template" id="views/widget2/login/order.html">
+    <div class="page-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Заказ {[ order.string_id ]}</h1>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <button class="btn pr-btn-circle btn-link" ui-sref="profileOrders">К списку заказов</button>
+                </div>
+            </div>
+            <div class="cart-product-item" ng-repeat="product in order.orders">
+                <div class="portlet">
+                    <div class="portlet-body form">
+                        <div class="form-horizontal">
+                            <div class="form-body">
+                                <div class="form-section">
+                                    <div class="form-group">
+                                        <div class="col-sm-3 edit-product">
+                                            <strong ng-bind="product.calc_data.tech_card.product"></strong>
+                                        </div>
+                                        <div class="col-sm-2 form-group-text">
+                                            <span>
+                                                {[ product.calc_data.tech_card.format[0] + ' x ' + product.calc_data.tech_card.format[1] ]} мм,
+                                                {[ productPagesSum(product.calc_data.tech_card) ]} стр.</span>
+                                        </div>
+                                        <div class="col-sm-2 form-group-text">
+                                            {[ product.calc_data.tech_card.circulation ]} шт. на {[ product.calc_data.tech_card.weight_circulation | number:2 ]} кг.
+                                        </div>
+                                        <div class="col-sm-3 group_sum right">{[ product.total_cost | number:2 ]} р.</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group col-sm-3 preview">
+                                                <img class="thumbnail" alt="Превью макета"
+                                                     ng-src="{[ '/static/img/calculator/new_products/' +
+                                                                product.calc_data.form_data.product_slug[0] +
+                                                                '.png' ]}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div class="order-info">
+                <div class="row high-line">
+                    <div class="col-sm-3">Срок</div>
+                    <div class="col-sm-6">
+                        {[ order.date_ready | date:"dd.MM.yyyy" ]}
+                    </div>
+                </div>
+                <div class="row high-line">
+                    <div class="col-sm-3">Доставка</div>
+                    <div class="col-sm-6 radio-list blue_color">
+                        {[ delivery.delivery_type == 'take_away' ? ('Самовывоз: '+ delivery.to) : (delivery.to) ]}
+                    </div>
+                    <div class="col-sm-3">
+                        {[ delivery.cost == 0 ? 'Бесплатно' : (delivery.cost | number:2) + ' р.']}
+                    </div>
+                </div>
+                <div class="row high-line" ng-show="delivery.deliveryType == 'delivery'">
+                    <div class="col-sm-3">Адрес</div>
+                    <div class="col-sm-6">{[ order.delivery_address ]}</div>
+                </div>
+                <div class="row high-line" ng-show="order.client_comment">
+                    <div class="col-sm-3">Комментарий к заказу</div>
+                    <div class="col-sm-6">{[ order.client_comment ]}</div>
+                </div>
+            </div>
+            <hr/>
+            <div class="text-right">
+                <h2>Общая цена: {[ order.total_cost | number:2 ]} р.</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+</script>
+<!-- ORDERS -->
+<script type="text/ng-template" id="views/widget2/orders/product.html">
+    
+
+<div calc-loading ng-if="isError || !isLoad" is-loading="!isLoad" is-error="isError"></div>
+<div class="page-content">
+    <div class="portlet" ng-if="isLoad">
+        <div class="portlet-body">
+            <h1>Новое печатное изделие</h1>
+            <div class="product_choice" ng-show="(by('subtype', ['singlepage', 'print_sheet']) | productSort).length > 0">
+                <h4>Одностраничные</h4>
+                <div class="products">
+                    <div class="product"
+                         ng-repeat="product in (by('subtype', ['singlepage', 'print_sheet']) | productSort)"
+                         ng-class="{'selected': (selectProduct == product)}"
+                         ng-click="setProduct(product)">
+                        <div class="product-body">
+                            <div class="img_div">
+                                <img ng-src="/static/img/calculator/new_products/new_iframe/{[product.image_name]}.png"
+                                     ng-mouseout="setHoveredProduct()"
+                                     ng-mouseover="setHoveredProduct(product)">
+                            </div>
+                            <div class="product-text" ng-bind="product.title"></div>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="product_choice" ng-show="(by('subtype', ['folded']) | productSort).length > 0">
+            <h4>Со сгибами</h4>
+                <div class="products">
+                    <div class="product"
+                         ng-repeat="product in by('subtype', ['folded']) | productSort"
+                         ng-class="{'selected': (selectProduct == product)}"
+                         ng-click="setProduct(product)">
+                        <div class="product-body">
+                            <div class="img_div">
+                                <img ng-src="/static/img/calculator/new_products/new_iframe/{[product.image_name]}.png"
+                                     ng-mouseout="setHoveredProduct()"
+                                     ng-mouseover="setHoveredProduct(product)">
+                            </div>
+                            <div class="product-text" ng-bind="product.title"></div>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="product_choice" ng-show="(by('type', ['multipage']) | productSort).length > 0">
+                <h4>Многостраничные</h4>
+                <div class="products">
+                    <div class="product"
+                         ng-repeat="product in by('type', ['multipage']) | productSort"
+                         ng-class="{'selected': (selectProduct == product)}"
+                         ng-click="setProduct(product)">
+                        <div class="product-body">
+                            <div class="img_div">
+                                <img ng-src="/static/img/calculator/new_products/new_iframe/{[product.image_name]}.png"
+                                     ng-mouseout="setHoveredProduct()"
+                                     ng-mouseover="setHoveredProduct(product)">
+                            </div>
+                            <div class="product-text" ng-bind="product.title"></div>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <!-- <hr color="#cbcbcb" />
+            <a ui-sref="orders.wideprint">Широкоформатка</a>
+            <hr color="#cbcbcb" /> -->
+        </div>
+    </div>
+</div>
+
+<div class="widget-footer">
+    <div class="row" ng-switch="!!(productIsHovered() || selectProduct)">
+        <label class="control-label col-sm-8" ng-switch-when="true">
+            {[ productIsHovered() ? hoveredProduct.description : selectProduct.description ]}
+        </label>
+
+        <label class="control-label col-sm-8" ng-switch-when="false">
+            Выберите изделие и мы сразу предложим Вам самые популярные его параметры и стоимость изготовления. Любые из этих параметров вы сможете изменить.
+        </label>
+
+        <button class="btn pr-btn-circle btn-primary widget-footer-btn"
+                ng-click="complete()"
+                ng-disabled="!selectProduct">К параметрам изделия</button>
+    </div>
+</div>
+</script>
+<script type="text/ng-template" id="views/widget2/orders/cart.html">
+    
+
+<div ng-controller="CalculatorController">
+<div ng-controller="WidgetCalcController">
+
+    <div calc-loading
+         ng-if="'init.loading' | calcStateInclude"
+         is-loading="'init.loading' | calcIsState"
+         is-error="'init.loading.error' | calcIsState"></div>
+
+    <div data-ng-show="!('init.loading' | calcStateInclude)" ng-if="isLoad">
+        <div class="page-content cart-form">
+            <center><h1>Параметры изделия</h1></center>
+            <div class="row" ng-controller="ProductDescController" ng-show="!('summary' | calcStateInclude)">
+                <form id='calcform' name="calcForm" ng-controller="WidgetCalcFormController" class="form-horizontal">
+                    <input type="hidden" value="3d2YvZe5AstSJKTVfVYxzvJJ54tKo2Ff" id="api_key">
+                    <div class="col-sm-12">
+                        <input type="hidden" name="product_slug" ng-value="currentProduct().slug"/>
+                        <div class="col-sm-9" id="left-calc-content">
+                            <div class="row">
+                                <div ng-show="currentProduct()" id="product-form">
+                                    <div class="form-section" ng-mouseenter="becameActive(sec)">
+    <div class="form-group-imitator row">
+        <div class="col-sm-9 col-sm-offset-3">
+            
+        </div>
+    </div>
+    
+<div class="form-group">
+    <label class="col-sm-3 control-label">Размеры</label>
+    <div class="btn-group col-sm-9">
+        <select ui-select2="calcformParams.formatSelectOptions" ng-model="calcformParams.currentFormatIndex" class="form-control input-medium">
+            <option ng-repeat="f in currentProduct().formats" value="{[ $index ]}">{[ f.height ]}|{[ f.width ]}|{[f.title]}</option>
+        </select>
+    </div>
+</div>
+<div class="form-group" ng-show="params.customFormatEnabled">
+    <div class="col-sm-5 col-sm-offset-3">
+        <div class="input-group">
+            <input type="number" class="form-control"
+                   min="1"
+                   name="format_width"
+                   id="format_width"
+                   ng-model="params.formatWidth"
+                   update-with="params.format.width"
+                   value="{[ params.formatWidth ]}"
+                   ng-readonly="params.format.title != 'custom'"
+                   required>
+            <span class="input-group-addon addon-transparent">&times;</span>
+            <input type="number" class="form-control"
+                       min="1"
+                       name="format_height"
+                       id="format_height"
+                       ng-model="params.formatHeight"
+                       update-with="params.format.height"
+                       value="{[ params.formatHeight ]}"
+                       ng-readonly="params.format.title != 'custom'"
+                       required>
+            <span class="input-group-addon addon-transparent">мм</span>
+        </div>
+    </div>
+</div>
+<div class="form-group" ng-if="currentProduct().is_cover">
+    <label class="col-sm-3 control-label">Обложка</label>
+    <div class="col-sm-9 checkbox-list">
+        <label class="checkbox-inline">
+            <input type="checkbox" name="is_cover" value="on"
+                    ng-model="secTabs.cover.enabled" ng-readonly="!secTabs.cover.optional" data-apply-uniform />
+            из другого материала
+        </label>
+        <div class="help-block">(еще {[ params.cover.pagesNumber ]} страницы)</div>
+    </div>
+    <input type="hidden" name="pages_cover" ng-value="params.cover.pagesNumber"/>
+</div>
+<div class="form-group" ng-if="currentProduct().is_back_cover">
+    <label class="col-sm-3 control-label">Подложка</label>
+    <div class="col-sm-9 checkbox-list">
+        <label class="checkbox-inline">
+            <input type="checkbox" name="is_pad" value="on"
+                    ng-model="secTabs.pad.enabled" ng-readonly="!secTabs.pad.optional" data-apply-uniform />
+            из другого материала
+        </label>
+        <div class="help-block">(еще {[ params.pad.pagesNumber ]} страницы)</div>
+    </div>
+    <input type="hidden" name="pages_pad" ng-value="params.pad.pagesNumber"/>
+</div>
+<div class="form-group" ng-if="params.oriented">
+    <label class="col-sm-3 control-label">Скрепление</label>
+    <input type="hidden" name="orientation" ng-value="params.orientation"/>
+    <div class="btn-group col-sm-9">
+        <button type="button" class="btn pr-btn-circle btn-default"
+                ng-model="params.orientation" btn-radio="'portrait'"
+                ng-disabled="options.orientation.indexOf('portrait') == -1"
+                popover="{[dictionary.binding]}" popover-trigger="mouseenter"  popover-placement="right" popover-popup-delay="500"  popover-animation=false popover-append-to-body=true>Сбоку</button>
+        <button type="button" class="btn pr-btn-circle btn-default"
+                ng-model="params.orientation" btn-radio="'landscape'"
+                ng-disabled="options.orientation.indexOf('landscape') == -1"
+                popover="{[dictionary.binding]}" popover-trigger="mouseenter"  popover-placement="right" popover-popup-delay="500"  popover-animation=false popover-append-to-body=true>Сверху</button>
+    </div>
+</div>
+
+</div>
+                                    <div ng-repeat="sec in sections | filter:sectionIsEnabled" id="section-{[sec]}">
+                                        <div class="form-section" ng-mouseenter="becameActive(sec)">
+    <div class="form-group-imitator row">
+        <div class="col-sm-9 col-sm-offset-3">
+            
+    <h2 ng-hide="sec == 'block' && !secTabs.cover.possible && !secTabs.pad.possible">
+        {[ sec | i18n ]}
+        <small ng-if="sec != 'block'">(+ {[ params[sec].pagesNumber ]} {[ 'pages' | i18n:'general':params[sec].pagesNumber ]})</small>
+    </h2>
+
+        </div>
+    </div>
+    
+<div ng-if="secTabs[sec].enabled">
+<div class="form-group" ng-show="currentProduct().type != 'singlepage' && sec == 'block'"
+        ng-class="{'has-error': calcForm.pages_block.$invalid }">
+    <label class="col-sm-3 control-label">Количество страниц</label>
+    <div class="col-sm-4">
+        <div plus-minus-input
+             model="params.block.pagesNumber"
+             min="{[params.block.pagesDiv]}"
+             step="{[params.block.pagesDiv]}"
+             divider="params.block.pagesDiv"
+             input-name="pages_block"></div>
+        <span class="help-block" ng-show="calcForm.pages_block.$error.dividesBy">
+            Количество страниц в блоке должно быть кратно {[ params.block.pagesDiv ]}
+        </span>
+    </div>
+</div>
+<div class="form-group" data-ng-hide="options[sec].printingType.length == 1">
+    <label class="col-sm-3 control-label">Способ печати</label>
+    <div class="col-sm-9">
+        <select ui-select2="calcformParams.defaultSelectOptions"
+                class="form-control input-medium"
+                name="printing_type_{[sec]}" id="id_printing_type_{[sec]}"
+                ng-model="params[sec].printingType">
+            <option ng-repeat="type in options[sec].printingType" value="{[type]}">{[ type | i18n:'printingTypes']}</option>
+        </select>
+    </div>
+</div>
+<div class="form-group-imitator row">
+    <div class="col-sm-9 col-sm-offset-3">
+        <h4>Материал</h4>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-3 control-label">Бумага, картон</label>
+    <div class="col-sm-9 btn-group">
+        <select ui-select2="calcformParams.defaultSelectOptions"
+                class="form-control input-medium"
+                name="material_{[sec]}" id="id_material_{[sec]}"
+                ng-model="params[sec].material">
+            <option ng-repeat="mat in options[sec].material" value="{[mat]}">{[ mat | i18n:'materials']}</option>
+        </select>
+    </div>
+</div>
+<div class="form-group" ng-show="options[sec].surface.length > 1" ng-if="params[sec].material != 'design'">
+    <input type="hidden" name="material_type_{[sec]}" ng-value="params[sec].surface || 'no'"/>
+    <div class="btn-group col-sm-9 col-sm-offset-3">
+        <label class="btn pr-btn-circle btn-default"
+                ng-model="params[sec].surface" btn-radio="'glossy'"
+                ng-disabled="options[sec].surface.indexOf('glossy') == -1"
+                popover="{[dictionary.glossy]}" popover-trigger="mouseenter"  popover-placement="right" popover-popup-delay="500"  popover-animation=false popover-append-to-body=true >Глянец</label>
+        <label class="btn pr-btn-circle btn-default"
+                ng-model="params[sec].surface" btn-radio="'matted'"
+                ng-disabled="options[sec].surface.indexOf('matted') == -1"
+                popover="{[dictionary.matted]}" popover-trigger="mouseenter"  popover-placement="right" popover-popup-delay="500"  popover-animation=false popover-append-to-body=true >Мат</label>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3" ng-show="dictionary_show"><p class="help-block" ng-bind-html="dictionary.material"></p></div>
+</div>
+<div class="form-group" ng-if="params[sec].material == 'design'">
+    <label class="col-sm-3 control-label">Наименование</label>
+    <div class="col-sm-9 btn-group">
+        <select ui-select2="calcformParams.defaultSelectOptions"
+                class="form-control input-medium"
+                name="design_paper_{[sec]}" id="id_design_paper_{[sec]}"
+                ng-model="params[sec].surface">
+            <option ng-repeat="title in options[sec].surface" value="{[title]}">{[ title ]}</option>
+        </select>
+    </div>
+</div>
+<div class="form-group" data-ng-if="params[sec].material == 'self-adhesive'"
+        data-ng-show="options[sec].glueType.length > 1">
+    <label class="col-sm-3 control-label">Клей</label>
+    <div class="col-sm-9">
+        <select ui-select2="calcformParams.defaultSelectOptions"
+                class="form-control input-medium"
+                name="material_glue_type_{[sec]}" id="id_material_glue_type_{[sec]}"
+                ng-model="params[sec].glueType">
+            <option ng-repeat="glue in options[sec].glueType" value="{[glue]}">{[ glue | i18n:'materials']}</option>
+        </select>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-3 control-label">Плотность</label>
+    <div class="col-sm-3">
+        <div class="input-group">
+            <select ui-select2="calcformParams.defaultSelectOptions"
+                    class="form-control"
+                    name="density_{[sec]}" id="id_density_{[sec]}"
+                    ng-model="params[sec].density"
+                    ng-init="getDensities(sec)">
+                <option ng-repeat="den in options[sec].density" value="{[den]}">{[ den]}</option>
+            </select>
+            <span class="input-group-addon addon-transparent">г/м<sup><small>2</small></sup></span>
+        </div>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3" ng-show="dictionary_show"><p class="help-block" ng-bind-html="dictionary.density"></p></div>
+</div>
+<div class="form-group-imitator row">
+    <div class="col-sm-9 col-sm-offset-3">
+        <h4>Печать, лак и ламинация</h4>
+    </div>
+</div>
+<input type="hidden" name="print_block" ng-model="params[sec].print"/>
+<div ng-repeat="side in possibleSides(sec)" ng-hide="sidesAreDuplicates(sec) && side == 'back'">
+    <div class="form-group" ng-if="params[sec].printingType != 'screen'">
+        <label class="col-sm-3 control-label"><b>{[ possibleSides(sec).length > 1 && !sidesAreDuplicates(sec) ? (side | i18n) : '' ]}</b></label>
+        <div class="col-sm-9">
+            <input type="hidden" name="chromaticity_{[side]}_{[sec]}" value="{[ chromCount(params[sec][side].chromaticity) ]}"/>
+            <select ui-select2="calcformParams.defaultSelectOptions"
+                    class="form-control input-medium"
+                    id="id_chromaticity_{[sec]}"
+                    ng-model="calcformParams.currentChromTypeId[sec][side]">
+                <option ng-repeat="ch in options[sec][side].chromOption" value="{[ch[0]]}">{[ ch[0] | i18n:'iframe_chromaticity']}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group" ng-if="params[sec].printingType != 'screen'"
+         ng-show="params[sec][side].chromOption[0] == '0'">
+        <div class="col-sm-9 col-sm-offset-3">
+            <div class="other">
+                <div class="btn-group">
+                    <label class="btn pr-btn-circle btn-default"
+                           ng-repeat="c in ['C', 'M', 'Y', 'K']"
+                           ng-model="params[sec][side].chromaticity[c]"
+                           btn-checkbox>
+                        {[ c ]}
+                        <input type="checkbox" hidden name="chrom_{[c]}_{[side]}_{[sec]}"
+                               ng-model="params[sec][side].chromaticity[c]"/>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <label class="col-sm-3 control-label" data-ng-bind="(params[sec][side].chromaticity.pantone !== undefined) ? 'Цвета Pantone' : ''"></label>
+        <div class="col-sm-9">
+            <div class="other">
+                <div class="help-block" data-ng-show="params[sec][side].chromOption[0] == '0'">
+                    <button class="btn pr-btn-circle green" ng-click="params[sec][side].chromaticity.pantone = []" ng-show="params[sec][side].chromaticity.pantone === undefined">Добавить Pantone</button>
+                    <div data-pantone-list
+                        ng-if="params[sec][side].chromaticity.pantone !== undefined"
+                        data-sec="{[sec]}"
+                        data-side="{[side]}"
+                        data-colors="params[sec][side].chromaticity.pantone"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group" ng-if="params[sec].printingType == 'screen'">
+        <label class="col-sm-3 control-label">{[ side | i18n ]}</label>
+        <div class="col-sm-9" ng-with="params[sec][side].screenColors.length as num">
+            <input type="hidden" name="screen_colors_{[side]}_{[sec]}" ng-value="num"/>
+            <label style="padding-top: 5px;">
+                <abbr title="Количество цветов Pantone (ниже)">
+                    {[ ((num? num + ' ' : '') + ('colors' | i18n:'general':num)) ]} Pantone
+                </abbr>
+            </label>
+        </div>
+    </div>
+    <div class="form-group" ng-if="params[sec].printingType == 'screen'">
+        <div class="col-sm-9 col-sm-offset-3">
+            <div data-pantone-list
+                 data-sec="{[sec]}"
+                 data-side="{[side]}"
+                 data-colors="params[sec][side].screenColors"></div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-9 col-sm-offset-3">
+            <select ui-select2="calcformParams.defaultSelectOptions"
+                    class="form-control input-medium"
+                    name="varnishing_type_{[side]}_{[sec]}" id="id_varnishing_type_{[side]}_{[sec]}"
+                    ng-model="params[sec][side].varnishingType">
+                <option ng-repeat="v in options[sec][side].varnishingType" value="{[v]}">{[ v | i18n:'varnishing']}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group" ng-hide="options[sec][side].varnishingSurface.length == 0">
+        <div class="col-sm-9 col-sm-offset-3">
+            <div class="btn-group">
+                <input type="hidden" name="varnishing_surface_{[side]}_{[sec]}" ng-value="params[sec][side].varnishingSurface"/>
+                <label class="btn pr-btn-circle btn-default"
+                        ng-model="params[sec][side].varnishingSurface" btn-radio="'glossy'"
+                        ng-disabled="options[sec][side].varnishingSurface.indexOf('glossy') == -1">Глянец</label>
+                <label class="btn pr-btn-circle btn-default"
+                        ng-model="params[sec][side].varnishingSurface" btn-radio="'matted'"
+                        ng-disabled="options[sec][side].varnishingSurface.indexOf('matted') == -1">Мат</label>
+            </div>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3" ng-show="dictionary_show"><p class="help-block" ng-bind-html="dictionary.varnishing"></p></div>
+    </div>
+    <div class="form-group" ng-hide="options[sec][side].laminationType.length <= 1">
+        <div class="col-sm-9 col-sm-offset-3">
+            <div class="btn-group">
+                <label class="btn pr-btn-circle btn-default" ng-repeat="v in ['no', 'glossy', 'matted']"
+                    ng-model="params[sec][side].laminationType" btn-radio="v"
+                    ng-disabled="options[sec][side].laminationType.indexOf(v) == -1 || options[sec][side].laminationType.length <= 1">
+                    {[ v | i18n:'lamination' ]}
+                </label>
+            </div>
+            <input type="hidden" name="lamination_surface_{[side]}_{[sec]}" ng-value="params[sec][side].laminationType"/>
+            <input type="hidden" name="lamination_type_{[side]}_{[sec]}"
+                   data-ng-value="params[sec][side].laminationType == 'no' ? 'no' : 'yes'"/>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3" ng-show="dictionary_show"><p class="help-block" ng-bind-html="dictionary.lamination"></p></div>
+    </div>
+    <div class="form-group" data-ng-hide="params[sec][side].laminationType == 'no'">
+        <label class="control-label col-md-3">Толщина ламината</label>
+        <div class="col-md-4" data-ng-hide="(side == 'back') && !params[sec].printBackAllowed">
+            <select class="form-control"
+                id="lamination_thickness_{[side]}_{[sec]}"
+                name="lamination_thickness_{[side]}_{[sec]}"
+                data-ng-model="params[sec][side].laminationThickness"
+                data-ng-options="w for w in getlaminationThickness(params[sec][side].laminationType) track by w"
+                data-ng-show="params[sec][side].laminationType != 'no' && printeryData[params[sec][side].laminationType+'_laminate_microns'].length != 0"
+            ></select>
+        </div>
+    </div>
+</div>
+<div class="form-group-imitator row" data-ng-if="machines.stamping">
+    <div class="col-sm-9 col-sm-offset-3">
+        <h4>Тиснение/конгрев</h4>
+    </div>
+</div>
+<div ng-repeat="side in possibleSides(sec)"
+     data-ng-if="machines.stamping"
+     ng-hide="sidesAreDuplicates(sec) && side == 'back'">
+    <div class="form-group" data-ng-hide="options[sec][side].hotstampingType.length <= 1">
+        <label class="col-sm-3 control-label"><b>{[ possibleSides(sec).length > 1 && !sidesAreDuplicates(sec) ? (side | i18n) : '' ]}</b></label>
+        <div class="col-md-4"
+            data-ng-hide="(side == 'back') && !params[sec].printBackAllowed">
+            <select class="form-control"
+                    id="hotstamping_type_{[side]}_{[sec]}"
+                    name="hotstamping_type_{[side]}_{[sec]}"
+                    data-ng-model="params[sec][side].hotstampingType"
+                    data-ng-options="(h | i18n:'hotstamping') for h in options[sec][side].hotstampingType track by h"
+                    data-ng-disabled="options[sec][side].hotstampingType.length == 1"></select>
+        </div>
+    </div>
+    <div class="form-group"
+         data-ng-if="machines.stamping"
+         data-ng-hide="options[sec].front.hotstampingFoilColor.length <= 1 && options[sec].back.hotstampingFoilColor.length <= 1">
+        <label class="control-label col-md-3">Цвет фольги</label>
+        <div class="col-md-4"
+            data-ng-hide="(side == 'back') && !params[sec].printBackAllowed">
+            <select class="form-control"
+                    id="hotstamping_foil_color_{[side]}_{[sec]}"
+                    name="hotstamping_foil_color_{[side]}_{[sec]}"
+                    data-ng-model="params[sec][side].hotstampingFoilColor"
+                    data-ng-options="(c | i18n:'color') for c in options[sec][side].hotstampingFoilColor track by c"
+                    data-ng-disabled="options[sec][side].hotstampingFoilColor.length <= 1"></select>
+            <br/>
+            <div class="radio-list" data-ng-hide="options[sec][side].hotstampingFoilSurface.length <= 1">
+                <label>
+                    <input data-apply-uniform
+                        type="radio"
+                        id="hotstamping_foil_surface_glossy_{[side]}_{[sec]}"
+                        name="hotstamping_foil_surface_{[side]}_{[sec]}"
+                        value="glossy"
+                        data-ng-model="params[sec][side].hotstampingFoilSurface"
+                        data-ng-disabled="options[sec][side].hotstampingFoilSurface.indexOf('glossy') == -1">
+                    Глянец
+                </label>
+                <label>
+                    <input data-apply-uniform
+                        type="radio"
+                        id="hotstamping_foil_surface_matted_{[side]}_{[sec]}"
+                        name="hotstamping_foil_surface_{[side]}_{[sec]}"
+                        value="matted"
+                        data-ng-model="params[sec][side].hotstampingFoilSurface"
+                        data-ng-disabled="options[sec][side].hotstampingFoilSurface.indexOf('matted') == -1">
+                    Мат
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+                                    </div>
+                                    <div class="form-section" ng-mouseenter="becameActive(sec)">
+    <div class="form-group-imitator row">
+        <div class="col-sm-9 col-sm-offset-3">
+            
+<h2 ng-hide="currentProduct().binding_type !== 'brace_binding' && currentProduct().binding_type !== 'spring_binding'">
+    Постпечатная обработка
+</h2>
+
+        </div>
+    </div>
+    
+<div class="form-group"
+     ng-if="currentProduct().binding_type == 'brace_binding'"
+     ng-show="options.braceType.length > 1">
+    <label class="col-sm-3 control-label">Вид скобы</label>
+    <input type="hidden" name="brace_type" ng-value="params.braceType"/>
+    <div class="btn-group col-sm-9">
+        <label class="btn pr-btn-circle btn-default"
+                ng-model="params.braceType" btn-radio="'simple'"
+                ng-disabled="options.braceType.indexOf('simple') == -1">Стандартная</label>
+        <label class="btn pr-btn-circle btn-default"
+                ng-model="params.braceType" btn-radio="'file'"
+                ng-disabled="options.braceType.indexOf('file') == -1">Файловая</label>
+    </div>
+</div>
+<div class="form-group" ng-if="currentProduct().binding_type == 'spring_binding'">
+    <label class="col-sm-3 control-label">Материал пружины</label>
+    <input type="hidden" name="spring_material" ng-value="params.springMaterial"/>
+    <div class="btn-group col-sm-9">
+        <label class="btn pr-btn-circle btn-default"
+                ng-model="params.springMaterial" btn-radio="'metal'"
+                ng-disabled="options.springMaterial.indexOf('metal') == -1">Металл</label>
+        <label class="btn pr-btn-circle btn-default"
+                ng-model="params.springMaterial" btn-radio="'plastic'"
+                ng-disabled="options.springMaterial.indexOf('plastic') == -1">Пластик</label>
+    </div>
+</div>
+<div class="form-group" data-ng-if="currentProduct().binding_type == 'spring_binding'">
+    <label class="col-sm-3 control-label">Цвет пружины</label>
+    <div class="btn-group col-sm-9">
+        <select ui-select2="calcformParams.defaultSelectOptions"
+                class="form-control input-medium"
+                name="spring_color" id="id_spring_color"
+                ng-model="params.springColor">
+            <option ng-repeat="color in options.springColorOptions[params.springMaterial]" value="{[color]}">{[ color | i18n:'color' ]} </option>
+        </select>
+    </div>
+</div>
+
+</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 right-calc-content" id="right-calc-content">
+                            <div id="initial" class="initial">
+                                <div class="padded-left">
+                                    <strong>{[ currentProduct().title ]}</strong><br>
+                                    {[ currentProduct().description ]}
+                                </div>
+                            </div>
+                            
+<div class="widget-slider-block" ng-show="currentProduct()" bottom=".widget-footer" resize=".resize-widget-slider-block">
+    <canvas id="helpCanvas" height="225" width="215"></canvas>
+    <div class="clearfix">
+        <h4 class="padded pull-left">
+            {[ currentProduct().title ]}
+            <small style="display: inline-block; width: 60px;">({[ $root.currentSide | i18n:'sides_short' ]})</small>
+        </h4>
+        <a href="" class="padded" style="position: absolute; top: 5px; right: 5px;" title="Повернуть изделие"
+           data-ng-click="$root.currentSide = ($root.currentSide == 'front' ? 'back' : 'front')"
+           data-ng-switch="$root.currentSide">
+            <i class="fa fa-rotate-left fa-2x" data-ng-switch-when="front"></i>
+            <i class="fa fa-rotate-right fa-2x" data-ng-switch-when="back"></i>
+        </a>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12">
+            <div class="padded-left input-group">
+                <input type="number" min="1" class="form-control" name="circulation" ng-model="params.circulation">
+                <span class="input-group-addon addon-transparent">шт.</span>
+
+            </div>
+        </div>
+    </div>
+    <p ng-if="'working.pending' | calcStateInclude">Идет подсчет...</p>
+    <div ng-show="'working.finished.error' | calcIsState">
+        <div class="alert alert-danger">
+            <p ng-repeat="e in calcResult.errors">{[ e ]}</p>
+        </div>
+    </div>
+    <div ng-show="!('working.finished.error' | calcIsState) && !states.needCalc">
+        <hr class="hr-small">
+        <p style="margin-right: -30px;">
+            {[ params.formatWidth ]} &times; {[ params.formatHeight ]} мм
+        </p>
+        <div ng-controller="WidgetCartDetailsController" ng-init="init('params')" ng-if="'working.finished.ok' | calcIsState">
+            <p ng-repeat="sec in sections | filter:sectionIsEnabled">
+                <strong ng-hide="(sections | filter:sectionIsEnabled).length == 1">{[ sec | i18n ]}</strong><br>
+                <span ng-bind-html="printString(sec)"></span><br>
+                {[ frontAllData(sec) ]}<br>
+                {[ backAllData(sec) ]}
+            </p>
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    <!-- end page-content -->
+    <div class="widget-footer two-string">
+    <div class="row">
+        <label class="control-label col-sm-6">
+            Стоимость
+        </label>
+        <label class="control-label col-sm-4 bold">
+            {[ (('working.pending' | calcStateInclude) || states.needCalc || ('working.finished.error' | calcIsState)) ? "..." :
+                    (order.total_cost | number:0) ]} <i class="fa fa-inh fa-rub"></i>
+        </label>
+        <div class="col-sm-2"></div>
+
+        <label class="control-label col-sm-6">
+            Стоимость за штуку
+        </label>
+        <label class="control-label col-sm-4 bold">
+            {[ (('working.pending' | calcStateInclude) || states.needCalc || ('working.finished.error' | calcIsState)) ? "..." :
+                    (((order.total_cost / params.circulation) || 0) | number:2) ]} <i class="fa fa-inh fa-rub"></i>
+        </label>
+        <div class="col-sm-2"></div>
+
+        <button class="btn pr-btn-circle btn-primary widget-footer-btn"
+                btn-click="funcs.addOrder"
+                ng-disabled="!('working.finished.ok' | calcIsState)"
+                ng-hide="states.needCalc">В корзину</button>
+        <button class="btn pr-btn-circle btn-primary widget-footer-btn"
+                ng-click="recount()"
+                ng-disabled="('working.pending.counting' | calcIsState)"
+                ng-show="states.needCalc">Расчитать</button>
+    </div>
+</div>
+    </div>
+</div>
+</div>
+</script>
+<script type="text/ng-template" id="views/widget2/orders/summary.html">
+    
+<div class="page-content cart-form">
+    <center><h1>Корзина</h1></center>
+
+    <div class="portlet orders-cart-items" ng-init="form = {open: undefined}">
+    <div class="portlet-body form orders-cart-item" ng-repeat="product in products track by $index">
+        <div class="form-horizontal" ng-controller="WidgetCartDetailsController" ng-init="init('product.params')">
+            <div class="form-body row">
+                <div class="col-sm-12">
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <h2 class="orders-cart-name">{[ product.calc_data.tech_card.product ]}</h2>
+                            <h2 class="orders-cart-amount">{[ product.total_cost | number:0 ]} руб.</h2>
+                        </div>
+                        <div class="form-group orders-cart-general">
+                            <label class="control-label col-sm-3">тираж</label>
+                            <label class="control-label col-sm-9 orders-cart-value">{[ product.calc_data.tech_card.circulation ]} шт.</label>
+                            <label class="control-label col-sm-3">формат</label>
+                            <label class="control-label col-sm-9 orders-cart-value">
+                                {[ product.calc_data.tech_card.format[0] + ' x ' + product.calc_data.tech_card.format[1] ]} мм
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 cart-item-btns">
+                        <div class="cart-btns-icons">
+                            <a class="icon-btn" href="#" ng-click="remove($index)">
+                                <span class="glyphicon glyphicon-trash"></span>
+                                <div>Удалить</div>
+                            </a>
+                            <a class="icon-btn" ui-sref="orders.edit({id: product.id})">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <div>Изменить</div>
+                            </a>
+                            <a class="icon-btn" href="#" ng-click="copy(product)">
+                                <i class="fa fa-copy"></i>
+                                <div>Дублировать</div>
+                            </a>
+                        </div>
+                        <div orders-maquette-download="product" download-click="form.open = $index" url="{[ '/widget/orders/'+ product.id +'/upload_maquette/' ]}" headers="uploadHeaders"></div>
+                    </div>
+                </div>
+                <div class="col-sm-12 orders-cart-moreinfo"
+                     ng-class="{'open': form.open == $index, 'close-more': (form.open != $index && form.open !== undefined)}">
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">вес</label>
+                            <label class="control-label col-sm-9 orders-cart-value">
+                                {[ product.calc_data.tech_card.weight_circulation | number:2 ]} кг
+                            </label>
+                            <div ng-repeat="(tab, value) in product.secTabs | filterValue:{enabled: true}">
+                                <h4 class="orders-more-h" ng-show="isSinglepage(product.secTabs)">{[ tab | i18n ]}</h4>
+                                <label class="control-label col-sm-3">тип печати</label>
+                                <label class="control-label col-sm-9 orders-cart-value">
+                                    {[ product.params[tab].printingType | i18n:'printingTypes' ]}. {[ chromaticityPrintingMsgBoth(tab) ]}
+                                </label>
+                                <div ng-switch="!!varnishingPrintingMsgBoth(tab)">
+                                    <div ng-switch-when="true">
+                                        <label class="control-label col-sm-3">лак</label>
+                                        <label class="control-label col-sm-9 orders-cart-value">
+                                            {[ varnishingPrintingMsgBoth(tab) ]}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div ng-switch="!!laminationPrintingMsgBoth(tab)">
+                                    <div ng-switch-when="true">
+                                        <label class="control-label col-sm-3">ламинация</label>
+                                        <label class="control-label col-sm-9 orders-cart-value">
+                                            {[ laminationPrintingMsgBoth(tab) ]}
+                                        </label>
+                                    </div>
+                                </div>
+                                <label class="control-label col-sm-3">материал</label>
+                                <label class="control-label col-sm-9 orders-cart-value" ng-bind-html="printString(tab)"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <table class="table table-striped table-hover">
+                            <tr ng-repeat="file in product.files">
+                                <td>{[ file.name | fileName:20 ]}</td>
+                                <td><a href="#" class="red" ng-click="product.DeleteFile(file)">x</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="orders-cart-morelink" ng-click="form.open == $index ? form.open = null : form.open = $index">
+                <p>
+                    {[ form.open == $index ? 'свернуть' : 'подробнее' ]}
+                    <i class="fa"
+                       ng-class="{ 'fa-caret-down': form.open != $index,
+                                   'fa-caret-up':  form.open == $index }"></i>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="new_order" ui-sref="orders.product"><p>+ Добавить ещё изделие</p></div>
+</div>
+
+</div>
+
+<div class="widget-footer">
+    <div class="row">
+        <label class="control-label col-sm-6">
+            Печать — {[ products.length ]} {[ "products" | i18n:"general":products.length ]} ({[ cart.totalWeight() | number:2 ]} кг)
+        </label>
+        <label class="control-label col-sm-4 bold">
+            {[ (cart.productsCost() - cart.totalTermCost()) | number:0 ]} <i class="fa fa-inh fa-rub"></i>
+        </label>
+        <div class="col-sm-2"></div>
+
+        <label class="control-label col-sm-6">
+            Срок изготовления — {[ cart.terms.getMargin() ]} {[ "days" | i18n:"general":cart.terms.getMargin() ]}
+        </label>
+        <label class="control-label col-sm-4 bold">
+            {[ cart.totalTermCost() | number:0 ]} <i class="fa fa-inh fa-rub"></i>
+        </label>
+        <div class="col-sm-2"></div>
+
+        <label class="control-label col-sm-6">
+            {[ delivery.delivery_type | i18n ]}
+            {[ cart.deliveryAddress() ]}
+        </label>
+        <label class="control-label col-sm-4 bold">
+            {[ (delivery.cost | number:0) || 0 ]} <i class="fa fa-inh fa-rub"></i>
+        </label>
+        <div class="col-sm-2"></div>
+        <button class="btn pr-btn-circle btn-primary widget-footer-btn"
+                ng-click="complete()" ng-disabled="products.length == 0"
+                ng-class="{'button-loading': orderIsBeingRegistering}">К срокам и доставке</button>
+        <p ng-hide="session.loggedIn" class="btn-helper">(необходима авторизация)</p>
+    </div>
+</div>
+</script>
+<script type="text/ng-template" id="views/widget2/orders/delivery.html">
+    <div class="page-content cart-form">
+    <form class="form-horizontal" id="DeliveryForm" ng-submit="create()">
+        <center><h1>Срок изготовления</h1></center>
+
+<div class="form-group">
+    <div class="col-sm-offset-1 col-sm-8 radio-list">
+        <label ng-repeat="day in cart.terms.days">
+            <input ng-model="cart.day" data-apply-uniform
+                   type="radio" name="term_option" ng-value="day"/>
+            <span ng-bind="day +' '+ ('days' | i18n:'general':day)"></span>
+        </label>
+    </div>
+    <label class="col-sm-3 delivery-right-money" ng-repeat="day in cart.terms.days">
+        {[ "+ "+ (cart.termCostBy(day) | number:0) +" руб." ]}
+    </label>
+</div>
+        <center><h1>Способ доставки ({[ cart.totalWeight() | number:2 ]} кг)</h1></center>
+
+<div class="form-group" ng-repeat="_delivery in deliveries">
+    <div class="col-sm-offset-1 col-sm-8 radio-list">
+        <label>
+            <input ng-model="cart.delivery_option" data-apply-uniform
+                   type="radio" name="delivery_option" ng-value="_delivery.id"/>
+            <span ng-if="_delivery.delivery_type == 'take_away'"
+                  ng-bind="'Самовывоз ('+ _delivery.to +')'"></span>
+            <span ng-if="_delivery.delivery_type == 'delivery'"
+                  ng-bind="'Доставка ('+ _delivery.to +')'"></span>
+        </label>
+    </div>
+    <label class="col-sm-3 delivery-right-money">
+        {[ deliveryCost(_delivery) ]}
+    </label>
+</div>
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10" ng-if="delivery.delivery_type == 'delivery'">
+        <div class="col-sm-10" ng-show="session.user.delivery_addresses.length > 0">
+            <div class="radio-list">
+                <label ng-repeat="delivery_address in session.user.delivery_addresses">
+                    <input data-apply-uniform
+                           ng-value="delivery_address.id"
+                           ng-model="cart.delivery_address"
+                           name="client_delivery_address_id" type="radio"/>
+                    {[ delivery_address.address ]}
+                </label>
+                <label>
+                    <input data-apply-uniform
+                           ng-value="null"
+                           ng-model="cart.delivery_address"
+                           name="client_delivery_address_id" type="radio"/>
+                    Введите новый адрес
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <label class="control-label" ng-show="session.user.delivery_addresses.length == 0">Введите новый адрес</label>
+            <input class="form-control" name="delivery_address" type="text"
+                   placeholder="Укажите адрес доставки (обязательное поле)"
+                   ng-model="clientInfo.address"
+                   ng-if="cart.delivery_address == null"
+                   required/>
+        </div>
+    </div>
+</div>
+        <center><h1>Способы оплаты</h1></center>
+
+<div class="form-group">
+    <div class="col-sm-offset-1 col-sm-8 radio-list">
+        <label>
+            <input data-apply-uniform
+                   ng-value="undefined"
+                   ng-model="cart.detail"
+                   name="client_detail_id" type="radio"/>
+            Наличный расчет
+        </label>
+        <label ng-repeat="detail in session.user.details">
+            <input data-apply-uniform
+                   ng-value="detail.id"
+                   ng-model="cart.detail"
+                   name="client_detail_id" type="radio"/>
+            Безналичный расчёт ({[ detail.organization_name ]})
+        </label>
+        <label ng-if="session.user.details.length == 0">
+            <input data-apply-uniform
+                   ng-value="null"
+                   ng-model="cart.detail"
+                   name="client_detail_id" type="radio"/>
+            Безналичный расчёт <a ui-sref="profile">нажмите, чтобы указать реквизиты</a>
+        </label>
+    </div>
+</div>
+
+        <center><h1>Комментарии к заказу</h1></center>
+
+        <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10">
+                <textarea class="form-control" name="order_comment" ng-model="cart.client_comment" type="text" rows=5 style="margin-bottom:50px;"></textarea>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="widget-footer two-string">
+    <div class="row">
+        <label class="control-label col-sm-6">
+            Итого {[ session.user.discount > 0 ? ("(с учётом скидки "+ session.user.discount +" %)") : "" ]}
+        </label>
+        <label class="control-label col-sm-4 bold">
+            {[ cart.totalCost(config.widget2.apiSettings) | number:2 ]} <i class="fa fa-inh fa-rub"></i>
+        </label>
+        <div class="col-sm-2"></div>
+        <label class="control-label col-sm-6">
+            {[ delivery.delivery_type | i18n ]}
+            {[ cart.deliveryAddress() ]}
+        </label>
+        <label class="control-label col-sm-4 bold">
+            к {[ cart.date() ]}
+        </label>
+        <div class="col-sm-2"></div>
+        <button class="btn pr-btn-circle btn-primary widget-footer-btn"
+                type="submit" form="DeliveryForm"
+                ng-class="{'button-loading': orderIsBeingRegistering}">ЗАКАЗАТЬ</button>
+    </div>
+</div>
+</script>
+<script type="text/ng-template" id="views/widget2/orders/feedback.html">
+    
+<div class="page-content cart-form">
+    <div class="row">
+        <div class="col-sm-12">
+            <form ng-switch="feedbackState">
+                <div ng-switch-when="taking">
+                    <h3>
+                        Оцените удобство онлайн-заказа
+                        <small style="color: #428bca;">
+                            <rating ng-model="fb.feedbackRating" max="5"></rating>
+                        </small>
+                    </h3>
+                    <textarea class="form-control" name="feedback" id="feedback" rows="5"
+                              ng-model="fb.feedbackMsg" ng-focus="clearDefaultMsg()"
+                              style="resize: none;"></textarea>
+                    <br>
+                    <button class="btn pr-btn-circle btn-primary" ng-click="sendFeedback()">Оценить</button>
+                </div>
+                <div ng-switch-when="sending">
+                    <p class="lead">Отправка информации...</p>
+                    <img src="/static/assets/global/img/loading-spinner-grey.gif" alt=""/>
+                </div>
+                <div ng-switch-when="finished">
+                    <p class="lead">Спасибо за отзыв!</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</script>
+<script type="text/ng-template" id="views/directives/calcLoading.html">
+    
+
+<div class="page-content text-center" style="height: 100%;">
+    <div class="loading-message" data-ng-show="isLoading">
+        <p class="lead">Загрузка ресурсов</p>
+        <img src="/static/assets/global/img/loading-spinner-grey.gif" alt=""/>
+    </div>
+    <div id="calcerr" class="row text-center alert alert-block alert-danger hide"
+         data-ng-show="isError">
+        <h4 class="alert-heading">К сожалению, калькулятор в данный момент недоступен.</h4>
+    </div>
+</div>
+</script>
+<script type="text/ng-template" id="views/directives/ordersDownload.html">
+    <div id="fileupload"
+     method="POST"
+     enctype="multipart/form-data"
+     data-file-upload="options"
+     class="col-sm-12">
+    <div class="fileupload-buttonbar">
+        <p class="btn pr-btn-circle btn-block fileinput-button"
+           ng-class="{ 'red': product.files.length == 0,
+                       'btn-success': product.files.length > 0 }">
+            <span>Загрузите макеты</span>
+            <input type="file" name="files[]" id="widget-maquette-files" multiple>
+        </p>
+        <span class="fileupload-process"></span>
+        <!-- <p>Можно загрузить <strong ng-bind="formats"></strong></p> -->
+    </div>
+    <div class="maquette-download-file" ng-repeat="file in queue">
+        <span ng-bind="filename(file.name)"></span>
+        <div class='progress progress-striped active' ng-show="file.$state() == 'pending'"
+             data-file-upload-progress="file.$progress()">
+            <div class='progress-bar progress-bar-info' role='progressbar' aria-valuenow='100'
+                 aria-valuemin='0' aria-valuemax='100' ng-style="{width: num+'%'}"></div>
+            <span class='progress-message'>загрузка</span>
+        </div>
+    </div>
+</div>
+
+</script>
+<script type="text/ng-template" id="views/widget2/orders/wideprint.html">
+    
+
+<div ng-controller="WideprintController" data-ng-with="'block' as sec">
+
+    <!-- <div calc-loading
+         ng-if="'init.loading' | calcStateInclude"
+         is-loading="'init.loading' | calcIsState"
+         is-error="'init.loading.error' | calcIsState"></div> -->
+
+    <div class="page-content">
+        
+
+<div class="form-horizontal">
+    <div class="form-body">
+        <div class="form-group">
+            <label class="col-md-3 control-label">Формат изделия</label>
+            <div class="col-md-3" style="padding-right: 5px; width: 127px;">
+                <input type="number" min="1" name="format_width" class="form-control"
+                       ng-model="params[sec].format.width" factor="10" required>
+                <span class="help-block">ширина</span>
+            </div>
+            <div class="col-md-1 lil-col">
+                <span class="help-inline">x</span>
+            </div>
+            <div class="col-md-3" style="padding: 0 5px; width: 116px;">
+                <input type="number" min="1" name="format_height" class="form-control"
+                       ng-model="params[sec].format.height" factor="10" required>
+                <span class="help-block">
+                    высота
+                </span>
+            </div>
+            <div class="col-md-1 lil-col">
+                <span class="help-inline">cм</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label">Тип</label>
+            <div class="col-md-9">
+                <div class="radio-list">
+                   <label>
+                       <input data-apply-uniform type="radio"
+                              value="interior"
+                              ng-model="params[sec].printing.purpose"/>
+                              Интерьерная печать
+                       <i class="fa fa-question-circle popovers"
+                           data-trigger="hover" data-container="body"
+                           data-content="Изделия обычно (но не обязательно) используются внутри помещений">
+                       </i>
+                   </label>
+                   <label>
+                       <input data-apply-uniform type="radio"
+                              value="street"
+                              ng-model="params[sec].printing.purpose"/>
+                              Широкоформатная печать
+                       <i class="fa fa-question-circle popovers"
+                           data-trigger="hover" data-container="body"
+                           data-content="Изделия для уличного использования (обычно, но не обязательно)">
+                       </i>
+                   </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label">Тираж</label>
+            <div class="col-md-9">
+                <input type="number" name="circulation" data-ng-model="params.circulation"
+                       class="form-control input-inline input-medium" required />
+                <span class="help-inline">шт</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label">Качество</label>
+            <div class="col-md-9">
+                <select class="form-control input-inline input-medium" id="printing-resolution"
+                        ui-select2="getSelectOptions('#printing-resolution')"
+                        ng-model="params[sec].printing.resolution"
+                        integer-model>
+                    <option ng-repeat="resolution in resolutionMap[params[sec].printing.purpose]"
+                            value="{[ resolution.resolution ]}">
+                        #{id}{[ $index ]}#{/id}
+                        #{hint}{[ resolution.hint ]}#{/hint}
+                        #{text}{[ resolution.title_for_client || (resolution.resolution | i18n:'qualitys') ]}#{/text}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label class="col-md-3 control-label">Материал</label>
+            <div class="col-md-9">
+                <select class="form-control input-inline input-medium"
+                        ui-select2="{minimumResultsForSearch: -1}"
+                        data-ng-model="params[sec].material.type">
+                    <option ng-repeat="type in options[sec].material.type"
+                            value="{[ type ]}"
+                            ng-bind="type.toString() | i18n:'wide-material-type'">
+                    </option>
+                </select>
+            </div>
+        </div>
+         <div class="form-group">
+            <label class="col-md-3 control-label">Плотность</label>
+            <div class="col-md-9">
+                <select class="form-control input-inline input-medium"
+                        ui-select2="{minimumResultsForSearch: -1}"
+                        data-ng-model="params[sec].material.density"
+                        data-integer-model>
+                    <option ng-repeat="density in options[sec].material.density"
+                            value="{[ density ]}"
+                            ng-bind="density">
+                    </option>
+                </select>
+                <span class="help-inline">г/м<sup>2</sup></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label">Покрытие</label>
+            <div class="col-md-9">
+                <select class="form-control input-inline input-medium"
+                        ui-select2="{minimumResultsForSearch: -1}"
+                        data-ng-model="params[sec].material.surface">
+                    <option ng-repeat="surface in options[sec].material.surface"
+                            value="{[ surface ]}"
+                            ng-bind="surface.toString() | i18n:'surface'">
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label">Светопропускаемость</label>
+            <div class="col-md-9">
+                <select class="form-control input-inline input-medium"
+                        ui-select2="{minimumResultsForSearch: -1}"
+                        data-ng-model="params[sec].material.lightType">
+                    <option ng-repeat="lightType in options[sec].material.lightType"
+                            value="{[ lightType ]}"
+                            ng-bind="lightType.toString() | i18n:'wide-material-light-type'">
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div ng-show="isGluing()">
+            <h4>Информация о склейке</h4>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Направление склейки</label>
+                <div class="col-md-4">
+                    <select id="format" class="form-control input-inline input-medium"
+                            ui-select2="{minimumResultsForSearch: -1}"
+                            data-ng-model="params[sec].gluing.direction">
+                        <option ng-repeat="direction in options[sec].gluing.direction"
+                                value="{[ direction ]}"
+                                ng-bind="direction.toString() | i18n:'direction'">
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Нахлест для склейки</label>
+                <div class="col-md-9">
+                    <input type="number" min="{[constraints.gluing_min_lapping]}" class="form-control input-inline input-medium"
+                           data-ng-model="params[sec].gluing.lapping">
+                    <span class="help-inline">мм</span>
+                </div>
+            </div>
+        </div>
+        <h4>Информация о резке</h4>
+        <div class="form-group">
+            <label class="col-md-3 control-label">Тип резки</label>
+            <div class="col-md-4">
+                <div class="radio-list">
+                   <label>
+                       <input data-apply-uniform type="radio"
+                              value="fast"
+                              ng-model="params[sec].cutting.type"/>
+
+                       Быстрая
+                       <i class="fa fa-question-circle popovers"
+                           data-trigger="hover" data-container="body"
+                           data-content="Дешёвый вариант резки. Используется для грубых изделий, к которым не предъявляются высокие эстетические требования. На краях изделия возможны незначительные неровности и волны">
+                       </i>
+                   </label>
+                   <label>
+                       <input data-apply-uniform type="radio"
+                              value="exact"
+                              ng-model="params[sec].cutting.type"/>
+                       Точная
+                       <i class="fa fa-question-circle popovers"
+                           data-trigger="hover" data-container="body"
+                           data-content="Стандартный вариант резки. Используется в тех случаях, когда к изделию предъявляются высокие эстетические требования">
+                       </i>
+                   </label>
+                </div>
+            </div>
+        </div>
+        <h4>Люверсы и карманы</h4>
+        <div cringles-pockets cringles="params[sec].cringles" pockets="params[sec].pockets"
+             options="options[sec]" ng-if="params[sec].cringles && params[sec].pockets" constraints="constraints"></div>
+    </div>
+</div>
+    </div>
+
+</div>
+</script>
+<script type="text/ng-template" id="views/directives/cringlesPockets.html">
+    <div class="form">
+    <div class="form-group">
+        <label class="col-md-3 control-label"></label>
+        <div class="radio-list col-md-4">
+            <label ng-repeat="cringlesType in options.cringles.type">
+                <input type="radio" value="{[ cringlesType ]}" name="cringles_type_radio" ng-model="cringles.type">
+                {[ cringlesType | i18n:'cringles-types' ]}
+            </label>
+        </div>
+        <div class="col-md-5" style="min-width:200px;">
+            <canvas id="cringles-pockets-img" width="200" height="150"></canvas>
+        </div>
+    </div>
+    <div ng-if="cringles.type == 'corner_and_center' || cringles.type == 'corners'">
+        <div class="form-bordered">
+            <div class="form-group">
+                <div class="radio-list col-md-6">
+                    <label>
+                        <input type="radio" name="custom_location" value="false" ng-model="cringles.useWhiteMargin">
+                        люверсы по изображению
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="radio-list col-md-4">
+                    <label>
+                        <input type="radio" name="custom_location" value="true" ng-model="cringles.useWhiteMargin">
+                        люверсы по белому полю
+                    </label>
+                </div>
+                <label class="col-md-3 control-label" ng-show="cringles.useWhiteMargin">размер белого поля</label>
+                <div class="col-md-5" ng-show="cringles.useWhiteMargin">
+                     <input type="number" class="form-control input-inline input-small"
+                            ng-model="cringles.whiteMargin" factor="10"
+                            min="{[ constraints.cringles_min_white_size * 10 ]}">
+                     <span class="help-inline">cм</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="cringles.type == 'custom'">
+        <div class="form-bordered">
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <label class="col-md-4"><strong>Люверсы</strong></label>
+                <label class="col-md-4"><strong>Карманы</strong></label>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">верх</label>
+                <div class="radio-list col-md-4">
+                    <label>
+                        <input type="radio" name="up_radio" value="cringles" ng-model="locations.up">
+                    </label>
+                </div>
+                <div class="radio-list col-md-4">
+                    <label>
+                        <input type="radio" name="up_radio" value="pockets" ng-model="locations.up">
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">низ</label>
+                <div class="radio-list col-md-4">
+                    <label>
+                        <input type="radio" name="bottom_radio" value="cringles" ng-model="locations.down">
+                    </label>
+                </div>
+                <div class="radio-list col-md-4">
+                    <label>
+                        <input type="radio" name="bottom_radio" value="pockets" ng-model="locations.down">
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">стороны</label>
+                <div class="radio-list col-md-4">
+                    <label>
+                        <input type="radio" name="sides_radio" value="cringles" ng-model="locations.sides">
+                    </label>
+                </div>
+                <div class="radio-list col-md-4">
+                    <label>
+                        <input type="radio" name="sides_radio" value="pockets" ng-model="locations.sides">
+                    </label>
+                </div>
+            </div>
+            <div ng-hide="pockets.location.length == 3">
+                <div class="form-group">
+                    <div class="radio-list col-md-6">
+                        <label>
+                            <input type="radio" name="custom_location" value="false" ng-model="cringles.useWhiteMargin">
+                            люверсы по изображению
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="radio-list col-md-4">
+                        <label>
+                            <input type="radio" name="custom_location" value="true" ng-model="cringles.useWhiteMargin">
+                            люверсы по белому полю
+                        </label>
+                    </div>
+                    <label class="col-md-3 control-label" ng-show="cringles.useWhiteMargin">размер белого поля</label>
+                    <div class="col-md-5" ng-show="cringles.useWhiteMargin">
+                        <input type="number"class="form-control input-inline input-small"
+                               ng-model="cringles.whiteMargin" factor="10"
+                               min="{[ constraints.cringles_min_white_size * 10 ]}">
+                        <span class="help-inline">cм</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Шаг люверсов</label>
+                    <div class="col-md-6">
+                        <select class="form-control input-inline input-medium"
+                                data-ng-model="cringles.customLocation.step"
+                                ui-select2="{minimumResultsForSearch: -1}">
+                            <option ng-repeat="step in options.cringles.customLocation.step"
+                                    value="{[ step ]}"
+                                    ng-bind="step / 10">
+                            </option>
+                        </select>
+                        <span class="help-inline">cм</span>
+                        <div class="help-block" style="color: #a94442;" ng-show="cringles.customLocation.step > 500">
+                            Внимание! Шаг люверсов более 500 мм может привести к разрыву материала!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="pockets.location.length != 0">
+                 <div class="form-group">
+                    <label class="col-md-3 control-label">Карман для трубы диаметром</label>
+                    <div class="col-md-9">
+                        <input type="number" class="form-control input-inline input-medium"
+                               ng-model="pockets.diameter" factor="10"
+                               min="{[ constraints.pockets_min_diameter * 10 ]}">
+                        <span class="help-inline">cм</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</script>
+
+
+
+<script type="text/javascript">
+    angular.module('Widget2')
+        .constant('urls', {"wide_get_surface": "/calculator/ajax/wide_get_surface", "validate": "/cabinet/validate/", "get-wide_products-ajax": "/calculator/ajax/wide_get_products/", "printery-calculator": "/calculator/", "get-printhouse-settings-ajax": "/calculator/ajax/get_printhouse_settings/", "product_image_url": "/static/img/calculator/new_products/new_iframe/", "iframe": "/cabinet/iframe/", "wide_get_densities": "/calculator/ajax/wide_get_densities", "iframe2": "/cabinet/iframe2/", "get-materials-ajax": "/calculator/ajax/get_materials/", "wide_get_resolutions": "/calculator/ajax/wide_get_resolutions", "get-total-settings-ajax": "/calculator/ajax/get_total_settings/", "terms-margins-ajax": "/calculator/ajax/terms_and_margins/", "get-machines-ajax": "/calculator/ajax/get_machines/", "get-products-ajax": "/calculator/ajax/get_products/", "knock": "/cabinet/knock/", "get-all-densities-ajax": "/calculator/ajax/all_densities/", "get-default-dependencies-ajax": "/calculator/ajax/get_default_dependencies/", "iframe2_maquette": "/cabinet/iframe2_maquette/", "get-pantones-ajax": "/calculator/ajax/get_pantones/", "wide-calculate-ajax": "/calculator/ajax/wide_calculate/", "wide_get_material_types": "/calculator/ajax/wide_get_material_types", "get-densities-ajax": "/calculator/ajax/get_densities/", "calculate-alax": "/calculator/ajax/calculate/", "home": "/cabinet/", "wide_get_light_transmission": "/calculator/ajax/wide_get_light_transmission", "home2": "/cabinet/home2/", "get-surfaces-ajax": "/calculator/ajax/get_surfaces/"})
+        .constant('token', "LJYrYt7uPzET61a5DHRg0dRbkwNXXl6x")
+        .constant('API_KEY', "3d2YvZe5AstSJKTVfVYxzvJJ54tKo2Ff")
+        .config(function($httpProvider, $stateProvider) {
+            $httpProvider.defaults.headers.common['X-Api-Key'] = "3d2YvZe5AstSJKTVfVYxzvJJ54tKo2Ff";
+            $httpProvider.defaults.headers.common['X-Api-Domain'] = document.referrer;
+            $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+            $httpProvider.defaults.headers.post['X-CSRFToken'] = "LJYrYt7uPzET61a5DHRg0dRbkwNXXl6x";
+        });
+    $('#mainwrap, #calcerr').removeClass('hide');
+    API_KEY = "3d2YvZe5AstSJKTVfVYxzvJJ54tKo2Ff";
+    NEW_IFRAME = true;
+</script>
+
+
+
+<!-- END BODY -->
+
+</body></html>
